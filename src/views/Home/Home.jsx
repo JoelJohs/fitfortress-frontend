@@ -22,15 +22,6 @@ const Home = () => {
         ))}
       </div>
 
-<<<<<<< HEAD
-      <div className="input-container">
-        <input
-          type="text"
-          placeholder="🔎 Search"
-          value={search}
-          onChange={handleSearch}
-        />
-=======
       <div>
       <div style={{ position: 'relative', display: 'inline-block' }}>
   <input
@@ -62,7 +53,6 @@ const Home = () => {
     </svg>
   </div>
 
->>>>>>> 9df62e184e9ac6fd5be451f7ae5672b1f2bb70c2
       </div>
     </main>
   );
