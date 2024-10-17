@@ -5,6 +5,7 @@
   height: 100px;
   width: 100%;
   margin-bottom: 2rem;
+  color: #E5E5D8;
 }
 
 .navbar-img .logo {
@@ -19,6 +20,9 @@
   justify-content: space-between;
   align-items: center;
   gap: 50px;
+  background-color: #4d2600;
+  border-radius: 5px;
+  border: solid 5px #C0C0C0;
 }
 
 .navbar-container ul li {
@@ -32,10 +36,11 @@
   color: #000;
   font-weight: bold;
   transition: 0.3s ease-in-out;
+  color: #E5E5D8;
 }
 
 .navbar-container ul li a:hover {
-  color: red;
+  color: rgb(97, 165, 131);
   font-size: 1.3rem;
 }
 

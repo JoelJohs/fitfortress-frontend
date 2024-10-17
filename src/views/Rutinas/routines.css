@@ -1,0 +1,66 @@
+.rutina-card {
+    text-decoration: none;
+  }
+  
+  .card-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .card-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .rutina-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .rutina-info {
+    padding: 16px;
+  }
+  
+  .rutina-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .rutinas-landing-container {
+    min-height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  .rutinas-header {
+    background-color: #2D4729;
+    color: white;
+    padding: 20px 0;
+  }
+  
+  .header-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .rutinas-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .rutinas-grid-container {
+    padding: 40px 0;
+  }
+  
+  .rutinas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+  }
