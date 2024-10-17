@@ -22,7 +22,7 @@ const Home = () => {
         ))}
       </div>
 
-      <div>
+      <div className="input-container">
         <input
           type="text"
           placeholder="🔎 Search"
