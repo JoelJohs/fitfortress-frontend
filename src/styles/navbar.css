@@ -7,6 +7,7 @@
   padding: 0 2rem;
   margin-bottom: 1rem;
   box-sizing: border-box;
+  color: #E5E5D8;
 }
 
 .navbar-img .logo {
@@ -22,6 +23,9 @@
   gap: clamp(1rem, 2vw, 2rem);
   margin: 0;
   padding: 0;
+  background-color: #4d2600;
+  border-radius: 5px;
+  border: solid 5px #C0C0C0;
 }
 
 .navbar-container ul li {
@@ -35,10 +39,11 @@
   color: #000;
   font-weight: bold;
   transition: 0.3s ease-in-out;
+  color: #E5E5D8;
 }
 
 .navbar-container ul li a:hover {
-  color: red;
+  color: rgb(97, 165, 131);
   font-size: 1.3rem;
 }
 

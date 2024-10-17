@@ -1,3 +1,6 @@
+body {
+  background-color: #E5E5D8;
+}
 .home-container {
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -18,11 +21,12 @@
   align-items: center;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(26, 25, 25, 0.1);
   margin: 10px 20px;
   padding: 20px;
   width: 100%;
   transition: transform 0.3s;
+  border: solid 5px #C0C0C0;
 }
 
 .article-container:hover {
@@ -55,7 +59,7 @@
 }
 
 .article-container a {
-  color: #007bff;
+  color: #638bda;
   text-decoration: none;
   font-weight: bold;
 }
@@ -68,8 +72,8 @@ input[type="text"] {
   padding: 10px;
   width: 100%;
   max-width: 600px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: 1px solid #E5E5D8;
+  border-radius: 5px;
   margin: 20px;
   font-size: 1em;
 }
