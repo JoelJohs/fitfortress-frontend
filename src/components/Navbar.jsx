@@ -2,8 +2,8 @@ import "../styles/navbar.css";
 
 const Navbar = () => {
   return (
-    <nav className="navbar-container left">
-      <div className="navbar-links_container">
+    <nav className="navbar-container">
+      <div className="navbar-links_container left">
         <ul>
           <li>
             <a href="/">Inicio</a>
