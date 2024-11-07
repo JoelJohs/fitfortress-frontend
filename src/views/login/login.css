@@ -1,43 +1,78 @@
 .principal {
-    position: relative; /* Necesario para que el div .datos se posicione en relación a este contenedor */
-    margin: auto;
+  position: relative;
+  margin: auto;
+  width: 100%;
+  height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .datos {
-    position: absolute; /* Esto hace que el div datos se coloque encima */
-    top: 50%; /* Mueve el div al 50% de la altura del contenedor */
-    left: 50%; /* Mueve el div al 50% del ancho del contenedor */
-    transform: translate(-50%, -50%); /* Ajusta la posición del div hacia atrás en ambos ejes para que quede exactamente en el centro */
-    z-index: 2; /* Asegura que el div datos esté por encima de la imagen */
-    background-color: rgba(0, 0, 0, 0.5); /* Opcional: Fondo semitransparente para que el contenido sea legible */
-    background-color: white; /* Para que el texto dentro del div datos sea visible */
-    padding: 10px; /* Añade un poco de espacio alrededor del contenido */
-    border-radius: 8px; /* Añade esquinas redondeadas (opcional) */
-    width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para mejor visibilidad */
 }
 
-.decoracion{
-    position: absolute; /* Esto hace que el div datos se coloque encima */
-    top: 46%; /* Mueve el div al 50% de la altura del contenedor */
-    left: 69%; /* Mueve el div al 50% del ancho del contenedor */
-    transform: translate(-50%, -50%); /* Ajusta la posición del div hacia atrás en ambos ejes para que quede exactamente en el centro */
-    z-index: 1; /* Asegura que el div datos esté por encima de la imagen */
-    padding: 10px; /* Añade un poco de espacio alrededor del contenido */
-    border-radius: 8px; /* Añade esquinas redondeadas (opcional) */
-    width: 300px;
-    text-align: center;
-    background-color: #4A291D;
+.decoracion {
+  //position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  padding: 10px;
+  border-radius: 8px;
+  width: 80%;
+  text-align: center;
+  background-color: #4a291d;
+  color: white; /* Asegura que el texto sea visible */
 }
 
-.favicon{
-    width: 100px;
+.favicon {
+  width: 100px; /* Ajusta el tamaño del favicon */
+  margin-top: 10px;
 }
 
-.registrar{
-    float: right;
+.registrar {
+  float: right;
+  margin-top: 10px;
 }
 
-.ff{
-    text-align: center; /* Centrar el contenido horizontalmente */
-    background-color: #4A291D;
+.ff {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.ingresar,
+.registrar,
+.log {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: #4a291d;
+  color: white;
+  cursor: pointer;
+}
+
+.ingresar:hover,
+.registrar:hover,
+.log:hover {
+  background-color: #3b2317;
 }
