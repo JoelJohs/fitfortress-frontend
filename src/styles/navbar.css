@@ -1,10 +1,12 @@
 .navbar-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   height: 100px;
   width: 100%;
-  margin-bottom: 2rem;
+  padding: 0 2rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
   color: #E5E5D8;
 }
 
@@ -15,11 +17,12 @@
 }
 
 .navbar-container ul {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 50px;
+  gap: clamp(1rem, 2vw, 2rem);
+  margin: 0;
+  padding: 0;
   background-color: #4d2600;
   border-radius: 5px;
   border: solid 5px #C0C0C0;
@@ -27,8 +30,8 @@
 
 .navbar-container ul li {
   list-style: none;
-  font-size: 1.2rem;
-  padding: 1rem 4rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 1.5rem);
 }
 
 .navbar-container ul li a {
@@ -46,4 +49,32 @@
 
 .navbar-links_container {
   border-bottom: 1px solid #000;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .navbar-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .navbar-links_container {
+    display: none;
+  }
+
+  .navbar-img .logo {
+    margin: 1rem;
+  }
+
+  .navbar-container ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navbar-container ul li {
+    padding: 0.5rem 1rem;
+  }
 }
