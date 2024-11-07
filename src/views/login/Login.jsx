@@ -1,4 +1,4 @@
-import "./login.css"
+import "./styles/ChatBot.css";
 
 const Login = () => {
     return (
@@ -19,19 +19,19 @@ const Login = () => {
                         <form>
                             <b>Ingrese su usuario:</b>
                             <br /><br />
-                            <input className="input" type="text" placeholder="Usuario" />
+                            <input className="input" type="text" placeholder="Usuario"/>
                             <br />
                             <b>Ingrese su contraseña:</b>
                             <br /><br />
-                            <input className="input" type="password" placeholder="Contraseña" />
+                            <input className="input contraseña" type="password" placeholder="Contraseña" />
                             <br /><br />
-                            <button className="log" type="reset">INGRESAR</button>
+                            <button className="log" type="submit">INGRESAR</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default Login;
