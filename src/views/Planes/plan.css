@@ -1,85 +1,92 @@
 .plan-card {
-    text-decoration: none;
-  }
-  
-  .card-container {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-    max-width: 30rem;
-  }
-  
-  .card-container:hover {
-    transform: scale(1.05);
-    max-width: 30rem;
-  }
-  
-  .plan-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .plan-info {
-    padding: 16px;
-  }
-  
-  .plan-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-  }
+  text-decoration: none;
+}
 
-  .planes-landing-container {
-    min-height: 100vh;
-    background-color: #f4f4f4;
-  }
-  
-  .planes-header {
-    background-color: #2D4729;
-    color: white;
-    padding: 20px 0;
-  }
-  
-  .header-container {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .planes-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-  }
-  
-  .planes-grid-container {
-    padding: 40px 0;
-  }
-  
-  .planes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    width: 80%;
-    margin: 0 auto;
-  }
-  .plan-description {
-    font-size: 17px;
-    color: #666;
-    margin-top: 8px;
-  }
-  .plan-caracteristicas {
-    font-size: 20px;
-    color: #888888;
-    margin-top: 8px;
-  }
-  .plan-precio {
-    display: flex;
-    justify-content: center;
-    color: #af3c3c;
-    margin-top: 8px;
-  }
-  
+.card-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  max-width: 30rem;
+}
+
+.card-container:hover {
+  transform: scale(1.05);
+}
+
+.plan-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.plan-info {
+  padding: 16px;
+}
+
+.plan-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.plan-description {
+  font-size: 1rem;
+  color: #444;
+  margin-top: 8px;
+}
+
+.plan-caracteristicas {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 8px;
+  color: #555;
+}
+
+.plan-caracteristicas li {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.plan-precio {
+  font-size: 1.2rem;
+  color: #af3c3c;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.planes-landing-container {
+  min-height: 100vh;
+  background-color: #e5e5d8; /* Color de fondo extraído de home.css */
+}
+
+.planes-header {
+  background-color: #4d2600; /* Color de fondo similar al de la navbar */
+  color: white;
+  padding: 20px 0;
+}
+
+.header-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.planes-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.planes-grid-container {
+  padding: 40px 0;
+}
+
+.planes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 80%;
+  margin: 0 auto;
+}

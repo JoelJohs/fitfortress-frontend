@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "./layout/Layout";
-import Home from "./views/Home/Home";
 import Login from "./views/login/Login";
 //import Routines from "./views/Rutinas/Routines";
 import Plan from "./views/Planes/Plan";
 import BlogDetail from "./views/Home/pages/BlogDetail";
+import Home from "./views/Home/home";
 //import Us from "./views/Nosotros/Us";
 
 const router = createBrowserRouter([

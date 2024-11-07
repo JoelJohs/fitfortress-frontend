@@ -29,13 +29,15 @@ const BlogDetail = () => {
       </div>
       <aside className="sidebar">
         <h2>Otros Blogs</h2>
-        <ul>
+        <div className="sidebar-blogs">
           {randomBlogs.map((randomBlog) => (
-            <li key={randomBlog.id}>
-              <a href={`/blog/${randomBlog.id}`}>{randomBlog.title}</a>
-            </li>
+            <div key={randomBlog.id} className="sidebar-blog-card">
+              <img src={randomBlog.image} alt={randomBlog.title} />
+              <h3>{randomBlog.title}</h3>
+              <a href={`/blog/${randomBlog.id}`}>Leer más</a>
+            </div>
           ))}
-        </ul>
+        </div>
       </aside>
     </div>
   );

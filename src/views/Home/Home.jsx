@@ -21,7 +21,7 @@ const Home = () => {
       <div className="search-container">
         <input
           type="text"
-          placeholder="Search"
+          placeholder="Busca tu blog 🔎"
           value={search}
           onChange={handleSearch}
         />
