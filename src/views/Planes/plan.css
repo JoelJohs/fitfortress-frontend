@@ -1,4 +1,4 @@
-.rutina-card {
+.plan-card {
     text-decoration: none;
   }
   
@@ -9,34 +9,36 @@
     overflow: hidden;
     transition: transform 0.3s ease;
     cursor: pointer;
+    max-width: 30rem;
   }
   
   .card-container:hover {
     transform: scale(1.05);
+    max-width: 30rem;
   }
   
-  .rutina-image {
+  .plan-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
   }
   
-  .rutina-info {
+  .plan-info {
     padding: 16px;
   }
   
-  .rutina-title {
+  .plan-title {
     font-size: 1.2rem;
     font-weight: bold;
     color: #333;
   }
 
-  .rutinas-landing-container {
+  .planes-landing-container {
     min-height: 100vh;
     background-color: #f4f4f4;
   }
   
-  .rutinas-header {
+  .planes-header {
     background-color: #2D4729;
     color: white;
     padding: 20px 0;
@@ -48,19 +50,36 @@
     text-align: center;
   }
   
-  .rutinas-title {
+  .planes-title {
     font-size: 2.5rem;
     font-weight: bold;
   }
   
-  .rutinas-grid-container {
+  .planes-grid-container {
     padding: 40px 0;
   }
   
-  .rutinas-grid {
+  .planes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     width: 80%;
     margin: 0 auto;
   }
+  .plan-description {
+    font-size: 17px;
+    color: #666;
+    margin-top: 8px;
+  }
+  .plan-caracteristicas {
+    font-size: 20px;
+    color: #888888;
+    margin-top: 8px;
+  }
+  .plan-precio {
+    display: flex;
+    justify-content: center;
+    color: #af3c3c;
+    margin-top: 8px;
+  }
+  
