@@ -24,8 +24,9 @@ const router = createBrowserRouter([
               path: "rutinas",
               element: <Routines />,
           },
+
           {
-            path: "/plan",
+            path: "plan",
             element: <Plan />,
           },
       ],
