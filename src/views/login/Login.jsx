@@ -22,7 +22,7 @@ const LoginRegisterTabs = () => {
       <div className="principal">
         <img
           className="bg-image"
-          src="/login_assets/Gimnasio-aparatos.png"
+          src="Gimnasio-aparatos.png"
           alt="Gimnasio con aparatos"
         />
         <div className="datos">
@@ -50,7 +50,7 @@ const LoginRegisterTabs = () => {
 const LoginForm = () => (
   <form>
     <div className="logo-container">
-      <img src="/login_assets/logo.png" alt="Logo" className="logo" />
+      <img src="/logo.png" alt="Logo" className="logo" />
     </div>
     <label htmlFor="usuario" className="form-label">
       Usuario:
@@ -83,7 +83,7 @@ const LoginForm = () => (
 const RegisterForm = () => (
   <form>
     <div className="logo-container">
-      <img src="/login_assets/logo.png" alt="Logo" className="logo" />
+      <img src="/logo.png" alt="Logo" className="logo" />
     </div>
     <label htmlFor="usuario" className="form-label">
       Usuario:
