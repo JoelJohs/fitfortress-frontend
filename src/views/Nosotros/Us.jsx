@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Us.css"; // Import custom CSS for additional styling
-
+import "./us.css";
 const Us = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
