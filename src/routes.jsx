@@ -5,7 +5,7 @@ import Login from "./views/login/Login";
 import Plan from "./views/Planes/Plan";
 import BlogDetail from "./views/Home/pages/BlogDetail";
 import Home from "./views/Home/Home";
-//import Us from "./views/Nosotros/Us";
+import Us from "./views/Nosotros/Us";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +33,10 @@ const router = createBrowserRouter([
         path: "plan",
         element: <Plan />,
       },
+      {
+        path: "nosotros",
+        element: <Us />,
+      }
     ],
   },
 ]);

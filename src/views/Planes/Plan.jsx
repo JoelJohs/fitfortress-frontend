@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import PlanCard from "./components/PlanCard";
 import "./plan.css";
 
 const Routines = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Desplaza la ventana hasta la parte superior al cargar el componente
+  }, []);
+
   const planes = [
     {
       nombre: "Plan Fuerza Total",
