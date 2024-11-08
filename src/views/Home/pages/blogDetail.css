@@ -12,7 +12,7 @@ body {
 .blog-detail-page {
   display: flex;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1400px; /* Increase the max-width */
   margin: 2rem auto;
   padding: 1rem;
   background: transparent; /* Make the container background transparent */
@@ -31,6 +31,10 @@ body {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   color: var(--primary-color);
+}
+
+.bold-text {
+  font-weight: bold;
 }
 
 .blog-meta-under-title {
@@ -59,8 +63,8 @@ body {
 }
 
 .blog-etiqueta {
-  background-color: var(--muted-color);
-  color: var(--secondary-color);
+  background-color: var(--accent-color);
+  color: #fff;
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
   font-size: 0.9rem;
@@ -157,8 +161,8 @@ body {
 }
 
 .related-blog-etiqueta {
-  background-color: #f0f0f0;
-  color: #888;
+  background-color: var(--accent-color);
+  color: #fff;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
   font-size: 0.8rem;

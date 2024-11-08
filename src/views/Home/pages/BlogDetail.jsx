@@ -1,9 +1,10 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import tempDb from "../../../utils/tempDb";
 import "./blogDetail.css";
 import { useState, useEffect } from "react";
 import { LikeIcon } from "../../../assets/BlogIcons";
 import "bootstrap/dist/css/bootstrap.min.css";
+import SideBlogs from "./SideBlogs";
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -27,10 +28,12 @@ const BlogDetail = () => {
   return (
     <div className="blog-detail-page">
       <div className="blog-detail-container">
-        <h1 className="blog-title">{blog.titulo}</h1>
+        <h1 className="blog-title bold-text">{blog.titulo}</h1>
         <div className="blog-meta-under-title">
           <span className="blog-author">{blog.autor.username}</span>
-          <span className="blog-date">{new Date(blog.fechaCreacion).toLocaleDateString()}</span>
+          <span className="blog-date">
+            {new Date(blog.fechaCreacion).toLocaleDateString()}
+          </span>
           <span className="blog-category">{blog.categoria}</span>
         </div>
         <div className="blog-etiquetas">
@@ -46,21 +49,7 @@ const BlogDetail = () => {
           <LikeIcon width={"20px"} height={"20px"} /> {blog.likes}
         </div>
       </div>
-      <div className="sidebar">
-        <h2>Otros Blogs</h2>
-        <div className="sidebar-blogs">
-          {randomBlogs.map((randomBlog) => (
-            <div key={randomBlog.id} className="sidebar-blog-card">
-              <img src={randomBlog.imagen} alt={randomBlog.titulo} />
-              <h3>{randomBlog.titulo}</h3>
-              <p>{randomBlog.contenido.substring(0, 50)}...</p>
-              <Link to={`/blog/${randomBlog.id}`} className="read-more">
-                Leer más
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>
+      <SideBlogs randomBlogs={randomBlogs} />
     </div>
   );
 };
