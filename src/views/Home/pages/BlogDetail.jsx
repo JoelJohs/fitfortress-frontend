@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import tempDb from "../../../utils/tempDb";
 import "./blogDetail.css";
 import { useState, useEffect } from "react";
@@ -7,21 +7,17 @@ import { LikeIcon } from "../../../assets/BlogIcons";
 const BlogDetail = () => {
   const { id } = useParams();
   const blog = tempDb.find((blog) => blog.id === parseInt(id));
-  const [relatedBlogs, setRelatedBlogs] = useState([]);
+  const [randomBlogs, setRandomBlogs] = useState([]);
 
   useEffect(() => {
-    if (blog) {
-      // Filtra blogs que compartan etiquetas con el blog actual y no sean el mismo
-      const similarBlogs = tempDb
-        .filter(
-          (b) =>
-            b.id !== parseInt(id) &&
-            b.etiquetas.some((etiqueta) => blog.etiquetas.includes(etiqueta))
-        )
-        .slice(0, 3); // Limitar a 3 blogs
-      setRelatedBlogs(similarBlogs);
-    }
-  }, [id, blog]);
+    window.scrollTo(0, 0); // Desplaza la ventana hasta la parte superior al cargar el componente
+
+    const shuffledBlogs = tempDb
+      .filter((b) => b.id !== parseInt(id))
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 3);
+    setRandomBlogs(shuffledBlogs);
+  }, [id]);
 
   if (!blog) {
     return <div className="not-found">Blog no encontrado</div>;
@@ -52,23 +48,16 @@ const BlogDetail = () => {
         </div>
       </div>
       <aside className="sidebar">
-        <h2>Blogs Relacionados</h2>
+        <h2>Otros Blogs</h2>
         <div className="sidebar-blogs">
-          {relatedBlogs.map((relatedBlog) => (
-            <div key={relatedBlog.id} className="sidebar-blog-card">
-              <img src={relatedBlog.imagen} alt={relatedBlog.titulo} />
-              <h3>{relatedBlog.titulo}</h3>
-              <p>{relatedBlog.contenido.substring(0, 50)}...</p>
-              <div className="related-blog-etiquetas">
-                {relatedBlog.etiquetas.map((etiqueta, index) => (
-                  <span key={index} className="related-blog-etiqueta">
-                    {etiqueta}
-                  </span>
-                ))}
-              </div>
-              <Link to={`/blog/${relatedBlog.id}`} className="read-more">
+          {randomBlogs.map((randomBlog) => (
+            <div key={randomBlog.id} className="sidebar-blog-card">
+              <img src={randomBlog.imagen} alt={randomBlog.titulo} />
+              <h3>{randomBlog.titulo}</h3>
+              <p>{randomBlog.contenido.substring(0, 50)}...</p>
+              <a href={`/blog/${randomBlog.id}`} className="read-more">
                 Leer más
-              </Link>
+              </a>
             </div>
           ))}
         </div>
