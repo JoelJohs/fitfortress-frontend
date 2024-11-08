@@ -86,11 +86,13 @@ h6 {
 
 .search-bar .form-control {
   border-radius: 8px;
+  color: #1a1a1a; /* Darker color */
 }
 
 .search-bar .btn {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+  color: #1a1a1a; /* Darker color */
 }
 
 /* Sección de filtros */
@@ -101,12 +103,18 @@ h6 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin-bottom: 1rem;
+  color: #1a1a1a; /* Darker color */
 }
 
 .filter-label {
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
+  color: #1a1a1a; /* Darker color */
+}
+
+.filter-label .form-check-input {
+  border-color: #1a1a1a; /* Darker border color */
 }
 
 /* Sección de carrusel */

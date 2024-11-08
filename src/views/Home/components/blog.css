@@ -23,7 +23,7 @@
 
 .card-text {
   font-size: 0.95rem;
-  color: #333;
+  color: #1a1a1a; /* Darker color */
 }
 
 .article-likes {
@@ -99,4 +99,5 @@
 
 .card-text {
   font-size: 0.95rem;
+  color: #1a1a1a; /* Darker color */
 }
