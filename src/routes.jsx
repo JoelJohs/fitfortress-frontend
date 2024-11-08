@@ -4,7 +4,7 @@ import Login from "./views/login/Login";
 //import Routines from "./views/Rutinas/Routines";
 import Plan from "./views/Planes/Plan";
 import BlogDetail from "./views/Home/pages/BlogDetail";
-import Home from "./views/Home/home";
+import Home from "./views/Home/Home";
 //import Us from "./views/Nosotros/Us";
 
 const router = createBrowserRouter([
