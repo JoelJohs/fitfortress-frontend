@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <nav className="navbar-container">
       <div className="navbar-img">
@@ -10,7 +17,7 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className="navbar-links_container">
+      <div className={`navbar-links_container ${isOpen ? "open" : ""}`}>
         <ul>
           <li>
             <Link to={"/"}>Inicio</Link>
@@ -31,6 +38,12 @@ const Navbar = () => {
             <Link to={"/login"}>Conectarse</Link>
           </li>
         </ul>
+      </div>
+
+      <div className="hamburger" onClick={toggleMenu}>
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
       </div>
     </nav>
   );
