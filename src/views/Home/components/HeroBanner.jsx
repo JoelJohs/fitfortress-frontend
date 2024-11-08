@@ -5,7 +5,7 @@ const HeroBanner = ({ onScrollToBlogs }) => {
   return (
     <div className="hero-banner">
       <img
-        src="/login_assets/Gimnasio-aparatos.png"
+        src="login_assets/Gimnasio-aparatos.png"
         alt="Gimnasio Aparatos"
         className="hero-image"
       />
