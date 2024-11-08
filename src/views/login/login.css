@@ -1,3 +1,5 @@
+/* login.css */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -8,79 +10,101 @@ body {
   position: relative;
   margin: auto;
   width: 100%;
-  height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .datos {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   z-index: 2;
-  background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
-  padding: 40px; /* Aumenta el padding para hacer la caja más grande */
-  border-radius: 12px; /* Bordes más redondeados */
-  width: 400px; /* Aumenta el ancho de la caja */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para mejor visibilidad */
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 12px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .decoracion {
   position: absolute;
-  top: 10%;
+  top: 20%;
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  padding: 10px;
-  border-radius: 8px;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  padding: 20px;
+  border-radius: 12px;
   width: 80%;
+  max-width: 600px;
   text-align: center;
   background-color: #4a291d;
-  color: white; /* Asegura que el texto sea visible */
+  color: white;
 }
 
-.favicon {
-  width: 100px; /* Ajusta el tamaño del favicon */
-  margin-top: 10px;
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
-.registrar {
-  float: right;
-  margin-top: 10px;
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border: none;
+  background: none;
+  transition: color 0.3s, border-bottom 0.3s;
 }
 
-.ff {
-  text-align: center;
-  margin-top: 20px;
+.tab.active {
+  color: #4a291d;
+  border-bottom: 2px solid #4a291d;
 }
 
 .input {
   width: 100%;
-  padding: 12px; /* Aumenta el padding para inputs más grandes */
+  padding: 12px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1rem; /* Aumenta el tamaño de la fuente */
+  font-size: 1rem;
 }
 
-.ingresar,
-.registrar,
-.log {
+.btn {
   width: 100%;
-  padding: 12px; /* Aumenta el padding para botones más grandes */
+  padding: 12px;
   margin: 10px 0;
   border: none;
   border-radius: 4px;
   background-color: #4a291d;
   color: white;
   cursor: pointer;
-  font-size: 1rem; /* Aumenta el tamaño de la fuente */
+  font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
-.ingresar:hover,
-.registrar:hover,
-.log:hover {
+.btn:hover {
   background-color: #3b2317;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
 }

@@ -1,6 +1,7 @@
 import "../home.css";
+import PropTypes from "prop-types";
 
-const HeroBanner = () => {
+const HeroBanner = ({ onScrollToBlogs }) => {
   return (
     <div className="hero-banner">
       <img
@@ -11,12 +12,15 @@ const HeroBanner = () => {
       <div className="hero-content">
         <h1>Bienvenido a FitFortress</h1>
         <p>Transforma tu vida con nuestras rutinas y planes personalizados.</p>
-        <a href="/blogs" className="hero-button">
+        <button onClick={onScrollToBlogs} className="hero-button">
           Ver Blogs
-        </a>
+        </button>
       </div>
     </div>
   );
+};
+HeroBanner.propTypes = {
+  onScrollToBlogs: PropTypes.func.isRequired,
 };
 
 export default HeroBanner;

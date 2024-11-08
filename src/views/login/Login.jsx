@@ -1,48 +1,123 @@
+import { useState } from "react";
 import "./login.css";
 
-const Login = () => {
+const LoginRegisterTabs = () => {
+  const [isLogin, setIsLogin] = useState(true); // Estado para cambiar entre login y register
+
+  const handleTabClick = (tab) => {
+    setIsLogin(tab === "login");
+  };
+
   return (
     <>
       <div className="decoracion">
-        <h1>
-          BIENVENIDO DE NUEVO <br /> AL MUNDO FITNESS
+        <h1 className="uppercase">
+          Bienvenido de nuevo <br /> al mundo fitness
         </h1>
       </div>
       <div className="principal">
         <img
-          style={{ filter: "blur(3px)" }}
-          width="100%"
+          className="bg-image"
           src="/login_assets/Gimnasio-aparatos.png"
-          alt="Gimnasio Aparatos"
+          alt="Gimnasio con aparatos"
         />
         <div className="datos">
-          <div className="ff">
-            <img className="favicon" src="/login_assets/FF.ico" alt="Favicon" />
+          <div className="tabs">
+            <button
+              className={`tab ${isLogin ? "active" : ""}`}
+              onClick={() => handleTabClick("login")}
+            >
+              Ingresar
+            </button>
+            <button
+              className={`tab ${!isLogin ? "active" : ""}`}
+              onClick={() => handleTabClick("register")}
+            >
+              Registrar
+            </button>
           </div>
-          <div className="ff">
-            <form>
-              <b>Ingrese su usuario:</b>
-              <br />
-              <input className="input" type="text" placeholder="Usuario" />
-              <b>Ingrese su contraseña:</b>
-              <br />
-              <input
-                className="input contraseña"
-                type="password"
-                placeholder="Contraseña"
-              />
-              <button className="log" type="submit">
-                Ingresar
-              </button>
-              <button className="registrar" type="button">
-                Registrar
-              </button>
-            </form>
-          </div>
+          {isLogin ? <LoginForm /> : <RegisterForm />}
         </div>
       </div>
     </>
   );
 };
 
-export default Login;
+const LoginForm = () => (
+  <form>
+    <div className="logo-container">
+      <img src="/login_assets/logo.png" alt="Logo" className="logo" />
+    </div>
+    <label htmlFor="usuario" className="form-label">
+      Usuario:
+    </label>
+    <input
+      id="usuario"
+      className="input"
+      type="text"
+      placeholder="Ingrese su usuario"
+      aria-label="Campo de usuario"
+    />
+
+    <label htmlFor="password" className="form-label">
+      Contraseña:
+    </label>
+    <input
+      id="password"
+      className="input"
+      type="password"
+      placeholder="Ingrese su contraseña"
+      aria-label="Campo de contraseña"
+    />
+
+    <button className="btn log uppercase" type="submit">
+      Ingresar
+    </button>
+  </form>
+);
+
+const RegisterForm = () => (
+  <form>
+    <div className="logo-container">
+      <img src="/login_assets/logo.png" alt="Logo" className="logo" />
+    </div>
+    <label htmlFor="usuario" className="form-label">
+      Usuario:
+    </label>
+    <input
+      id="usuario"
+      className="input"
+      type="text"
+      placeholder="Ingrese su usuario"
+      aria-label="Campo de usuario"
+    />
+
+    <label htmlFor="email" className="form-label">
+      Correo Electrónico:
+    </label>
+    <input
+      id="email"
+      className="input"
+      type="email"
+      placeholder="Ingrese su correo electrónico"
+      aria-label="Campo de correo"
+    />
+
+    <label htmlFor="password" className="form-label">
+      Contraseña:
+    </label>
+    <input
+      id="password"
+      className="input"
+      type="password"
+      placeholder="Ingrese su contraseña"
+      aria-label="Campo de contraseña"
+    />
+
+    <button className="btn registrar uppercase" type="submit">
+      Registrar
+    </button>
+  </form>
+);
+
+export default LoginRegisterTabs;
