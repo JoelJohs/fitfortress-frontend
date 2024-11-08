@@ -1,15 +1,5 @@
-/* blog.css */
-
 .article-container {
-  min-width: 250px; /* Reduce el tamaño mínimo de las tarjetas */
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -19,42 +9,23 @@
 }
 
 .article-image img {
-  width: 100%;
-  height: auto;
   border-radius: 8px;
-  margin-bottom: 20px;
 }
 
 .article-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
   text-align: center;
 }
 
-.article-container h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
-.article-container p {
-  font-size: 1em;
+.card-text {
+  font-size: 0.95rem;
   color: #333;
-  margin-bottom: 10px;
 }
 
-.article-container a {
-  color: #638bda;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.article-container a:hover {
-  text-decoration: underline;
-}
-
-/* Estilo para la sección de likes */
 .article-likes {
   display: flex;
   align-items: center;
@@ -68,11 +39,64 @@
 .article-likes svg {
   width: 1.2em;
   height: 1.2em;
-  fill: #d94e67; /* Color del ícono */
+  fill: #d94e67;
+}
+/* blog.css */
+
+.article-image img {
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-@media (max-width: 1024px) {
-  .article-container {
-    min-width: 200px; /* Reduce el tamaño mínimo de las tarjetas en pantallas más pequeñas */
+.article-likes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1em;
+  color: #555;
+}
+
+.article-likes svg {
+  width: 1.2em;
+  height: 1.2em;
+  fill: #d94e67;
+}
+
+.card-title {
+  /* blog.css */
+
+  .article-image img {
+    border-radius: 8px;
+    margin-bottom: 10px;
   }
+
+  .article-likes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 1em;
+    color: #555;
+  }
+
+  .article-likes svg {
+    width: 1.2em;
+    height: 1.2em;
+    fill: #d94e67;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+  }
+
+  font-size: 1.25rem;
+}
+
+.card-text {
+  font-size: 0.95rem;
 }

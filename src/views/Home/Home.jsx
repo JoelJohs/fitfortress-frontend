@@ -3,23 +3,21 @@ import "./home.css";
 import tempDb from "../../utils/tempDb";
 import HeroBanner from "./components/HeroBanner";
 import Blogs from "./components/Blogs";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Home = () => {
   const [search, setSearch] = useState("");
   const [selectedCategories, setSelectedCategories] = useState([]);
   const blogsRef = useRef(null);
 
-  // Función para manejar búsqueda
   const handleSearch = (event) => {
     setSearch(event.target.value);
   };
 
-  // Función para desplazarse a blogs
   const handleScrollToBlogs = () => {
     blogsRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Función para cambio de categoría
   const handleCategoryChange = (event) => {
     const category = event.target.value;
     setSelectedCategories((prevCategories) =>
@@ -29,7 +27,6 @@ const Home = () => {
     );
   };
 
-  // Filtrado de blogs
   const filteredBlogs = tempDb.filter((blog) => {
     const matchesSearch = blog.titulo
       .toLowerCase()
@@ -40,43 +37,76 @@ const Home = () => {
     return matchesSearch && matchesCategory;
   });
 
-  // Obtención dinámica de categorías únicas
   const categories = [...new Set(tempDb.map((blog) => blog.categoria))];
+
+  const groupedBlogs = [];
+  for (let i = 0; i < filteredBlogs.length; i += 3) {
+    groupedBlogs.push(filteredBlogs.slice(i, i + 3));
+  }
 
   return (
     <div className="home-container">
       <HeroBanner onScrollToBlogs={handleScrollToBlogs} />
 
-      {/* Search Input */}
-      <div className="search-container">
-        <input
-          type="text"
-          placeholder="Busca tu blog 🔎"
-          value={search}
-          onChange={handleSearch}
-        />
+      <div className="container my-4">
+        <div className="row justify-content-center">
+          <div className="col-md-8">
+            <div className="search-bar input-group">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Busca tu blog 🔎"
+                value={search}
+                onChange={handleSearch}
+              />
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Filter Categories */}
-      <div className="filter-container">
-        {categories.map((category) => (
-          <label key={category} className="filter-label">
-            <input
-              type="checkbox"
-              value={category}
-              checked={selectedCategories.includes(category)}
-              onChange={handleCategoryChange}
-            />
-            {category}
-          </label>
-        ))}
+      <div className="container mb-4">
+        <div className="row justify-content-center">
+          <div className="col-md-10">
+            <div className="filter-section">
+              <h5>Filtrar por Categoría:</h5>
+              <div className="d-flex flex-wrap justify-content-center">
+                {categories.map((category) => (
+                  <label key={category} className="filter-label mx-2">
+                    <input
+                      type="checkbox"
+                      value={category}
+                      checked={selectedCategories.includes(category)}
+                      onChange={handleCategoryChange}
+                      className="form-check-input me-1"
+                    />
+                    {category}
+                  </label>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Blogs Carousel */}
-      <div className="carousel-container" ref={blogsRef}>
-        {filteredBlogs.map((blog, index) => (
-          <Blogs key={index} blog={blog} />
-        ))}
+      <div className="container" ref={blogsRef}>
+        <div className="carousel-container">
+          <div className="carousel-inner">
+            {groupedBlogs.map((group, index) => (
+              <div
+                key={index}
+                className={`carousel-item ${index === 0 ? "active" : ""}`}
+              >
+                <div className="row">
+                  {group.map((blog, idx) => (
+                    <div key={idx} className="col-md-4 mb-4 d-flex">
+                      <Blogs blog={blog} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

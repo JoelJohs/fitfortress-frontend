@@ -1,9 +1,10 @@
 import { useEffect } from "react";
-import "./us.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./Us.css"; // Import custom CSS for additional styling
 
 const Us = () => {
   useEffect(() => {
-    window.scrollTo(0, 0); // Desplaza la ventana hasta la parte superior al cargar el componente
+    window.scrollTo(0, 0);
   }, []);
 
   const teamMembers = [
@@ -31,17 +32,23 @@ const Us = () => {
   ];
 
   return (
-    <div className="us-container">
-      <div className="us-banner">
-        <img className="bg-image" src="/team.jpg" alt="Nuestro equipo" />
-        <div className="us-banner-content">
-          <h1>Sobre Nosotros</h1>
-          <p>Conoce más sobre nuestro equipo y nuestra misión.</p>
+    <div className="container">
+      <div className="hero-banner position-relative text-center text-white">
+        <img
+          className="w-100 h-100 object-fit-cover"
+          src="/team.jpg"
+          alt="Nuestro equipo"
+        />
+        <div className="hero-content position-absolute top-50 start-50 translate-middle">
+          <h1 className="display-4 text-white-bold">Sobre Nosotros</h1>
+          <p className="lead">
+            Conoce más sobre nuestro equipo y nuestra misión.
+          </p>
         </div>
       </div>
-      <div className="us-content">
-        <section className="about-section">
-          <h2>Nuestra Misión</h2>
+      <div className="content my-5 p-4 bg-light rounded shadow">
+        <section className="mb-5">
+          <h2 className="text-accent">Nuestra Misión</h2>
           <p>
             En FitFortress, nuestra misión es ayudarte a alcanzar tus metas de
             fitness y bienestar. Creemos en el poder del ejercicio y la
@@ -50,17 +57,20 @@ const Us = () => {
             éxito.
           </p>
         </section>
-        <section className="team-section">
-          <h2>Conoce a Nuestro Equipo</h2>
-          <div className="team-members">
+        <section>
+          <h2 className="text-accent">Conoce a Nuestro Equipo</h2>
+          <div className="row">
             {teamMembers.map((member, index) => (
-              <div key={index} className="team-member">
+              <div key={index} className="col-md-4 text-center mb-4">
                 <img
+                  className="rounded-circle mb-3"
                   src={member.imagen}
                   alt={`Miembro del equipo ${index + 1}`}
+                  width="150"
+                  height="150"
                 />
                 <h3>{member.nombre}</h3>
-                <p>{member.rol}</p>
+                <p className="text-muted">{member.rol}</p>
                 <p>{member.descripcion}</p>
               </div>
             ))}

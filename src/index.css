@@ -1,5 +1,20 @@
+:root {
+  --primary-color: #2d4729;
+  --secondary-color: #c0c0c0;
+  --tertiary-color: #e5e5d8;
+  --accent-color: #4d2600;
+  --background-color: #2e3a52;
+  --secondary-accent-color: #a3a3a3;
+  --highlight-color: #b3b3b3;
+  --muted-color: #d3d3d3;
+  --planes-background-color: #e5e5d8; /* Added background color for planes */
+  --gradient-background: linear-gradient(135deg, #e5e5d8, #c0c0c0, #a3a3a3); /* Updated gradient background */
+}
+
+/* Globales */
 html {
   box-sizing: border-box;
+  font-size: 16px; /* Base font size */
 }
 
 *,
@@ -12,6 +27,82 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  background-color: #f5f5f5;
+  background: none; /* Remove background from body */
   width: 100%;
+  color: var(--secondary-color); /* Color de texto global */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* Improve text rendering */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fixed background element */
+.fixed-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-background);
+  z-index: -1; /* Ensure it stays behind all content */
+}
+
+/* Enlaces */
+a {
+  color: var(--primary-color); /* Color primario */
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-color); /* Color secundario */
+  text-decoration: underline;
+}
+
+/* Botones */
+button {
+  background-color: var(--primary-color); /* Color primario */
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: var(--accent-color); /* Color secundario */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+button:focus {
+  outline: 2px solid #2ecc71; /* Accessibility improvement */
+  outline-offset: 2px;
+}
+
+/* Resets de contenedor */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Responsividad general */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  button {
+    padding: 0.4rem 0.8rem;
+  }
 }
