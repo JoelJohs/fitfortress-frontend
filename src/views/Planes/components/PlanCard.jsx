@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import "../plan.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const PlanCard = ({ plan }) => {
   return (

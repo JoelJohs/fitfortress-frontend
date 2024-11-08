@@ -5,17 +5,19 @@ import { Link } from "react-router-dom";
 
 const Blogs = ({ blog }) => {
   return (
-    <article className="article-container">
+    <article className="card shadow-sm h-100">
       <div className="article-image">
-        <img src={blog.imagen} alt={blog.titulo} />
+        <img src={blog.imagen} alt={blog.titulo} className="card-img-top" />
       </div>
-      <div className="article-content">
-        <h2>{blog.titulo}</h2>
-        <p>{blog.contenido.substring(0, 100)}...</p>
-        <p className="article-likes">
+      <div className="card-body text-center">
+        <h5 className="card-title">{blog.titulo}</h5>
+        <p className="card-text">{blog.contenido.substring(0, 100)}...</p>
+        <p className="article-likes mb-2">
           <LikeIcon /> {blog.likes}
         </p>
-        <Link to={`/blog/${blog.id}`}>Leer más</Link>
+        <Link to={`/blog/${blog.id}`} className="btn btn-primary">
+          Leer más
+        </Link>
       </div>
     </article>
   );

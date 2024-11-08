@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import PlanCard from "./components/PlanCard";
 import "./plan.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Routines = () => {
   useEffect(() => {
-    window.scrollTo(0, 0); // Desplaza la ventana hasta la parte superior al cargar el componente
+    window.scrollTo(0, 0);
   }, []);
 
   const planes = [
@@ -54,6 +55,9 @@ const Routines = () => {
       <header className="planes-header">
         <div className="header-container">
           <h1 className="planes-title">Planes</h1>
+          <p className="planes-description">
+            Descubre nuestros planes diseñados para mejorar tu salud y bienestar. Elige el que mejor se adapte a tus objetivos y comienza tu transformación hoy mismo.
+          </p>
         </div>
       </header>
 
