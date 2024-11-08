@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import "./blog.css";
 import { LikeIcon } from "../../../assets/BlogIcons";
+import { Link } from "react-router-dom";
 
 const Blogs = ({ blog }) => {
   return (
@@ -14,7 +15,7 @@ const Blogs = ({ blog }) => {
         <p className="article-likes">
           <LikeIcon /> {blog.likes}
         </p>
-        <a href={`/blog/${blog.id}`}>Leer más</a>
+        <Link to={`/blog/${blog.id}`}>Leer más</Link>
       </div>
     </article>
   );

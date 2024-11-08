@@ -13,22 +13,22 @@ const Navbar = () => {
       <div className="navbar-links_container">
         <ul>
           <li>
-            <a href="/">Inicio</a>
+            <Link to={"/"}>Inicio</Link>
           </li>
           <li>
-            <a href="/rutinas">Rutinas</a>
+            <Link to={"/rutinas"}>Rutinas</Link>
           </li>
           <li>
-            <a href="/asistente">Asistente virtual</a>
+            <Link to={"/asistente"}>Asistente virtual</Link>
           </li>
           <li>
-            <a href="/plan">Planes</a>
+            <Link to={"/plan"}>Planes</Link>
           </li>
           <li>
-            <a href="/nosotros">Nosotros</a>
+            <Link to={"/nosotros"}>Nosotros</Link>
           </li>
           <li>
-            <a href="/login">Conectarse</a>
+            <Link to={"/login"}>Conectarse</Link>
           </li>
         </ul>
       </div>

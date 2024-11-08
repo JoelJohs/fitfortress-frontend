@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import tempDb from "../../../utils/tempDb";
 import "./blogDetail.css";
 import { useState, useEffect } from "react";
@@ -66,9 +66,9 @@ const BlogDetail = () => {
                   </span>
                 ))}
               </div>
-              <a href={`/blog/${relatedBlog.id}`} className="read-more">
+              <Link to={`/blog/${relatedBlog.id}`} className="read-more">
                 Leer más
-              </a>
+              </Link>
             </div>
           ))}
         </div>
