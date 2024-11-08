@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import tempDb from "../../../utils/tempDb";
 import "./blogDetail.css";
 import { useState, useEffect } from "react";
@@ -55,9 +55,9 @@ const BlogDetail = () => {
               <img src={randomBlog.imagen} alt={randomBlog.titulo} />
               <h3>{randomBlog.titulo}</h3>
               <p>{randomBlog.contenido.substring(0, 50)}...</p>
-              <a href={`/blog/${randomBlog.id}`} className="read-more">
+              <Link to={`/blog/${randomBlog.id}`} className="read-more">
                 Leer más
-              </a>
+              </Link>
             </div>
           ))}
         </div>
