@@ -25,44 +25,38 @@ const BlogDetail = () => {
   }
 
   return (
-    <div className="container mt-4">
-      <div className="row">
-        <div className="col-lg-8">
-          <div className="card mb-4">
-            <div className="card-body">
-              <h1 className="card-title">{blog.titulo}</h1>
-              <div className="d-flex justify-content-between text-muted mb-2">
-                <span>{blog.autor.username}</span>
-                <span>{new Date(blog.fechaCreacion).toLocaleDateString()}</span>
-                <span>{blog.categoria}</span>
-              </div>
-              <div className="mb-3">
-                {blog.etiquetas.map((etiqueta, index) => (
-                  <span key={index} className="badge bg-secondary me-1">
-                    {etiqueta}
-                  </span>
-                ))}
-              </div>
-              <img className="img-fluid rounded mb-3" src={blog.imagen} alt={blog.titulo} />
-              <p className="card-text">{blog.contenido}</p>
-              <div className="d-flex align-items-center text-danger">
-                <LikeIcon width={"20px"} height={"20px"} /> {blog.likes}
-              </div>
-            </div>
-          </div>
+    <div className="blog-detail-page">
+      <div className="blog-detail-container">
+        <h1 className="blog-title">{blog.titulo}</h1>
+        <div className="blog-meta-under-title">
+          <span className="blog-author">{blog.autor.username}</span>
+          <span className="blog-date">{new Date(blog.fechaCreacion).toLocaleDateString()}</span>
+          <span className="blog-category">{blog.categoria}</span>
         </div>
-        <div className="col-lg-4">
-          <h2>Otros Blogs</h2>
+        <div className="blog-etiquetas">
+          {blog.etiquetas.map((etiqueta, index) => (
+            <span key={index} className="blog-etiqueta">
+              {etiqueta}
+            </span>
+          ))}
+        </div>
+        <img className="blog-image" src={blog.imagen} alt={blog.titulo} />
+        <p className="blog-content">{blog.contenido}</p>
+        <div className="blog-likes">
+          <LikeIcon width={"20px"} height={"20px"} /> {blog.likes}
+        </div>
+      </div>
+      <div className="sidebar">
+        <h2>Otros Blogs</h2>
+        <div className="sidebar-blogs">
           {randomBlogs.map((randomBlog) => (
-            <div key={randomBlog.id} className="card mb-3">
-              <img src={randomBlog.imagen} className="card-img-top" alt={randomBlog.titulo} />
-              <div className="card-body">
-                <h5 className="card-title">{randomBlog.titulo}</h5>
-                <p className="card-text">{randomBlog.contenido.substring(0, 50)}...</p>
-                <Link to={`/blog/${randomBlog.id}`} className="btn btn-primary">
-                  Leer más
-                </Link>
-              </div>
+            <div key={randomBlog.id} className="sidebar-blog-card">
+              <img src={randomBlog.imagen} alt={randomBlog.titulo} />
+              <h3>{randomBlog.titulo}</h3>
+              <p>{randomBlog.contenido.substring(0, 50)}...</p>
+              <Link to={`/blog/${randomBlog.id}`} className="read-more">
+                Leer más
+              </Link>
             </div>
           ))}
         </div>
