@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cabeza {
+    background-image: url(images/bicep-removebg-preview.png);
+    background-size: 100% 140%; /* Estira la imagen para que se ajuste al div */
+    background-color: #4A291D;
+    display: flex;
+    align-items: center; /* Alinea el logo y el texto verticalmente */
+    height: 300px;
+    padding: 0%;
+}
+
+.logo {
+    margin-right: auto; /* Empuja el logo hacia la izquierda */
+}
+
+.cabeza h1 {
+    margin: auto; /* Centra el texto en el espacio disponible */
+    text-align: center;
+    color: #C0C0C0;
+}
+
+.cabeza button{
+    margin: auto;
+    background-color: #C0C0C0;
+    height: 40px;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.rutinas{
+    display: flexbox;
+    background-color: #2D4729;
+    margin: 0%;
+    color: #C0C0C0;
+    overflow: hidden;
+}
+
+.rutinas h1{
+    text-align: center;
+}
+
+.img1{
+    border-radius: 10px;
+    float: left;
+    background-color: #4A291D;
+    margin-left: 100px;
+    text-align: center;
+}
+
+.img1 img{
+    width: 300px;
+    height: 300px;
+}
+
+.img1 p{
+    display: inline-block;
+    text-align: center;
+    color: #C0C0C0;
+}
+
+.img1 button{
+    background-color: #C0C0C0;
+    border-radius: 8px;
+    height: 30px;
+    margin: 10px;
+}
+
+.separador{
+    height: 20px;
+    background-color: #2D4729;
+}
+
+.separador2{
+    height: 20px;
+    background-color: #4A291D;
+}
+
+.chatbot{
+    display: flexbox;
+    background-color: #4A291D;
+    color: #C0C0C0;
+    overflow: hidden;
+}
+
+footer {
+    background-color: #000000; /* Color de fondo del footer */
+    padding: 20px;
+    text-align: center;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center; /* Centra los íconos horizontalmente */
+    align-items: center; /* Alinea los íconos verticalmente */
+    gap: 50px; /* Espacio entre cada ícono */
+}
+
+.social-media a img {
+    width: 30px; /* Ajusta el tamaño del ícono */
+    height: auto;
+    vertical-align: middle; /* Alineación adicional si fuera necesario */
+
+}
