@@ -1,37 +1,129 @@
-import "./styles/ChatBot.css";
+import { useState, useEffect } from "react";
+import "./login.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const Login = () => {
-    return (
-        <div>
-            <div className="decoracion">
-                <h1>BIENVENIDO DE NUEVO <br /> AL MUNDO FITNESS</h1>
-            </div>
-            <div className="principal">
-                <img style={{ filter: "blur(3px)" }} width="100%" src="/login_assets/Gimnasio-aparatos.png" alt="Gimnasio Aparatos" />
-                <div className="datos">
-                    <button className="ingresar" type="button">Ingresar</button>
-                    <button className="registrar" type="button">Registrar</button>
-                    <div className="ff">
-                        <br />
-                        <img className="favicon" src="/login_assets/FF.ico" alt="Favicon" />
-                    </div>
-                    <div className="ff">
-                        <form>
-                            <b>Ingrese su usuario:</b>
-                            <br /><br />
-                            <input className="input" type="text" placeholder="Usuario"/>
-                            <br />
-                            <b>Ingrese su contraseña:</b>
-                            <br /><br />
-                            <input className="input contraseña" type="password" placeholder="Contraseña" />
-                            <br /><br />
-                            <button className="log" type="submit">INGRESAR</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+const LoginRegisterTabs = () => {
+  const [isLogin, setIsLogin] = useState(true);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleTabClick = (tab) => {
+    setIsLogin(tab === "login");
+  };
+
+  return (
+    <div className="container-fluid principal d-flex align-items-center justify-content-center">
+      <div className="row bg-overlay w-100">
+        <div className="col-md-6 d-none d-md-flex decoracion align-items-center justify-content-center">
+          <div className="text-center text-white">
+            <h1 className="display-4">Bienvenido de nuevo</h1>
+            <p>Al mundo fitness</p>
+          </div>
         </div>
-    );
+        <div className="col-md-6 datos p-5 mx-auto">
+          <div className="tabs d-flex justify-content-around mb-4">
+            <button
+              className={`tab btn ${isLogin ? "btn-primary" : "btn-outline-primary"}`}
+              onClick={() => handleTabClick("login")}
+            >
+              Ingresar
+            </button>
+            <button
+              className={`tab btn ${!isLogin ? "btn-primary" : "btn-outline-primary"}`}
+              onClick={() => handleTabClick("register")}
+            >
+              Registrar
+            </button>
+          </div>
+          {isLogin ? <LoginForm /> : <RegisterForm />}
+        </div>
+      </div>
+    </div>
+  );
 };
 
-export default Login;
+const LoginForm = () => (
+  <form className="text-center">
+    <div className="logo-container mb-4">
+      <img src="/logo.png" alt="Logo" className="logo rounded-circle" />
+    </div>
+    <div className="mb-3">
+      <label htmlFor="usuario" className="form-label">
+        Usuario:
+      </label>
+      <input
+        id="usuario"
+        className="form-control"
+        type="text"
+        placeholder="Ingrese su usuario"
+      />
+    </div>
+    <div className="mb-3">
+      <label htmlFor="password" className="form-label">
+        Contraseña:
+      </label>
+      <input
+        id="password"
+        className="form-control"
+        type="password"
+        placeholder="Ingrese su contraseña"
+      />
+    </div>
+    <button className="btn btn-primary w-100 text-uppercase" type="submit">
+      Ingresar
+    </button>
+    <p className="mt-3">
+      <a href="#" className="text-danger">
+        ¿Olvidaste tu contraseña?
+      </a>
+    </p>
+  </form>
+);
+
+const RegisterForm = () => (
+  <form className="text-center">
+    <div className="logo-container mb-4">
+      <img src="/logo.png" alt="Logo" className="logo rounded-circle" />
+    </div>
+    <div className="mb-3">
+      <label htmlFor="usuario" className="form-label">
+        Usuario:
+      </label>
+      <input
+        id="usuario"
+        className="form-control"
+        type="text"
+        placeholder="Ingrese su usuario"
+      />
+    </div>
+    <div className="mb-3">
+      <label htmlFor="email" className="form-label">
+        Correo Electrónico:
+      </label>
+      <input
+        id="email"
+        className="form-control"
+        type="email"
+        placeholder="Ingrese su correo electrónico"
+      />
+    </div>
+    <div className="mb-3">
+      <label htmlFor="password" className="form-label">
+        Contraseña:
+      </label>
+      <input
+        id="password"
+        className="form-control"
+        type="password"
+        placeholder="Ingrese su contraseña"
+      />
+    </div>
+    <button className="btn btn-primary w-100 text-uppercase" type="submit">
+      Registrar
+    </button>
+  </form>
+);
+
+export default LoginRegisterTabs;
