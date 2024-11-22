@@ -1,0 +1,97 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2A3F25;
+    color: #E5E5D8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Tarjeta de pago */
+.card {
+    background-color: #4A291D;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Encabezado */
+.card h1 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #E5E5D8;
+}
+
+.card p {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* Detalles del plan */
+.plan-details {
+    margin-bottom: 20px;
+    background-color: #2D4729;
+    padding: 15px;
+    border-radius: 5px;
+    color: #E5E5D8;
+    text-align: left;
+}
+
+/* Grupo de formulario */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Etiqueta */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #E5E5D8;
+}
+
+/* Campos de entrada */
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #2D4729;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #E5E5D8;
+}
+
+/* Botón */
+.btn {
+    background-color: #2D4729;
+    color: #E5E5D8;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2A3F25;
+}
