@@ -47,7 +47,7 @@ const LoginRegisterTabs = () => {
 const LoginForm = () => (
   <form className="text-center">
     <div className="logo-container mb-4">
-      <img src="/logo.png" alt="Logo" className="logo rounded-circle" />
+      <img src="/logon.png" alt="Logo" className="logo rounded-circle" />
     </div>
     <div className="mb-3">
       <label htmlFor="usuario" className="form-label">
@@ -85,7 +85,7 @@ const LoginForm = () => (
 const RegisterForm = () => (
   <form className="text-center">
     <div className="logo-container mb-4">
-      <img src="/logo.png" alt="Logo" className="logo rounded-circle" />
+      <img src="/logon.png" alt="Logo" className="logo rounded-circle" />
     </div>
     <div className="mb-3">
       <label htmlFor="usuario" className="form-label">
