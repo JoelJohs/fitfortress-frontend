@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { registerUser, getUserByUsername } from "../../utils/dbConnection"; // Import registerUser and getUserByUsername
+import advicesArray from "../../utils/advicesArray"; // Import advicesArray
 import "./login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -9,9 +10,13 @@ const LoginRegisterTabs = () => {
   const [isLogin, setIsLogin] = useState(true);
   const { login } = useAuth();
   const navigate = useNavigate(); // Initialize useNavigate
+  const [advice, setAdvice] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const randomAdvice =
+      advicesArray[Math.floor(Math.random() * advicesArray.length)];
+    setAdvice(randomAdvice);
   }, []);
 
   const handleTabClick = (tab) => {
@@ -22,12 +27,16 @@ const LoginRegisterTabs = () => {
     console.log("Login");
     e.preventDefault();
     const credentials = {
-      username: e.target.usuario.value, 
+      username: e.target.usuario.value,
       password: e.target.password.value,
     };
     try {
       const user = await getUserByUsername(credentials.username); // Fetch user details
-      await login({ ...credentials, role: user.role, tipoCuenta: user.tipoCuenta }); // Pass user details to login
+      await login({
+        ...credentials,
+        role: user.role,
+        tipoCuenta: user.tipoCuenta,
+      }); // Pass user details to login
       console.log("Logged in:", credentials.username, credentials.password);
       navigate("/"); // Redirect to home page
     } catch (error) {
@@ -60,8 +69,8 @@ const LoginRegisterTabs = () => {
       <div className="row bg-overlay w-100 justify-content-center">
         <div className="col-md-6 d-none d-md-flex decoracion align-items-center justify-content-center">
           <div className="text-center text-white">
-            <h1 className="display-4">Bienvenido de nuevo</h1>
-            <p>Al mundo fitness</p>
+            <h1 className="display-4">Bienvenido al mundo del Fitness</h1>
+            <p>{advice}</p> {/* Display random advice */}
           </div>
         </div>
         <div className="col-md-6 datos p-5 mx-auto">
@@ -83,7 +92,11 @@ const LoginRegisterTabs = () => {
               Registrar
             </button>
           </div>
-          {isLogin ? <LoginForm handleLogin={handleLogin} /> : <RegisterForm handleRegister={handleRegister} />}
+          {isLogin ? (
+            <LoginForm handleLogin={handleLogin} />
+          ) : (
+            <RegisterForm handleRegister={handleRegister} />
+          )}
         </div>
       </div>
     </div>
@@ -149,7 +162,7 @@ const RegisterForm = ({ handleRegister }) => {
   return (
     <form className="text-center" onSubmit={handleRegister}>
       <div className="logo-container mb-4">
-        <img src="/logo.png" alt="Logo" className="logo rounded-circle" />
+        <img src="/logon.png" alt="Logo" className="logo rounded-circle" />
       </div>
       <div className="row">
         <div className="col-md-6 mb-3">

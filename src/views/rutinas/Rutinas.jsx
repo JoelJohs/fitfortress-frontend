@@ -7,7 +7,7 @@ const Rutinas = () => {
       <section className="container my-5">
         <h1
           className="text-center fw-bold"
-          style={{ color: "var(--tertiary-color)" }} /* Improved contrast */
+          style={{ color: "var(--light-text-color)" }} /* Improved contrast */
         >
           ¿Qué tipo de rutina buscas?
         </h1>
@@ -76,7 +76,7 @@ const Rutinas = () => {
                 className="img-fluid rounded"
                 style={{ width: "150px", height: "150px" }}
               />
-              <p style={{ color: "var(--secondary-color)" }}>
+              <p style={{ color: "var(--dark-text-color)" }}>
                 Si ya tienes una rutina y tienes preguntas <br /> puedes visitar
                 nuestro <strong>ChatBot</strong>
               </p>
@@ -93,10 +93,7 @@ const Rutinas = () => {
                   Ir a ChatBot
                 </button>
               </div>
-              <h3
-                className="mt-4 fw-bold"
-                style={{ color: "var(--secondary-color)" }}
-              >
+              <p className="mt-4" style={{ color: "var(--dark-text-color)" }}>
                 Además de resolver dudas, en nuestro <strong>ChatBot</strong>{" "}
                 también puedes pedirle consejos, informarte sobre las mejores
                 comidas según tu tipo de cuerpo, pedirle una dieta basada en tu
@@ -106,7 +103,7 @@ const Rutinas = () => {
                 En FitFortress estamos orgullosos de nuestra buena puntuación
                 entre los clientes, gracias al <strong>ChatBot</strong> que
                 brinda información confiable.
-              </h3>
+              </p>
             </div>
           </div>
         </section>

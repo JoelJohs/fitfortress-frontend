@@ -1,6 +1,6 @@
 .footer-container {
-  background-color: var(--primary-color); /* Match navbar background color */
-  color: var(--secondary-color);
+  background-color: var(--background-color); /* Match navbar background color */
+  color: var(--light-text-color); /* Updated color */
   padding: 2rem 0; /* Reduced padding */
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -27,7 +27,7 @@
 .footer-description {
   margin-top: 0.5rem; /* Reduced margin */
   font-size: 0.9rem; /* Reduced font size */
-  color: var(--secondary-accent-color);
+  color: var(--highlight-color); /* Updated color */
 }
 
 .footer-newsletter {
@@ -38,12 +38,12 @@
 .footer-newsletter h4 {
   margin-bottom: 0.5rem; /* Reduced margin */
   font-size: 1.2rem; /* Reduced font size */
-  color: var(--secondary-color);
+  color: var(--light-text-color); /* Updated color */
 }
 
 .footer-newsletter p {
   font-size: 0.9rem; /* Reduced font size */
-  color: var(--secondary-accent-color);
+  color: var(--highlight-color); /* Updated color */
   margin-bottom: 0.5rem; /* Reduced margin */
 }
 
@@ -64,7 +64,7 @@
 .newsletter-form button {
   padding: 0.5rem 1rem;
   font-size: 0.9rem; /* Reduced font size */
-  color: var(--primary-color); /* Match navbar button color */
+  color: var(--background-color); /* Updated color */
   background-color: var(--secondary-color);
   border: none;
   border-radius: 4px;
@@ -95,7 +95,7 @@
 .footer-bottom {
   text-align: center;
   padding: 1rem 0; /* Reduced padding */
-  background-color: var(--primary-color); /* Match navbar background color */
-  color: var(--secondary-color);
+  background-color: var(--background-color); /* Match navbar background color */
+  color: var(--light-text-color); /* Updated color */
   width: 100%; /* Ensure full width */
 }

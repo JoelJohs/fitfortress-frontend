@@ -1,14 +1,34 @@
 :root {
-  --primary-color: #ffffff;
-  --secondary-color: #c0c0c0;
-  --tertiary-color: #404d49;
-  --accent-color: #485877;
-  --background-color: #2e3a52;
-  --secondary-accent-color: #a3a3a3;
-  --highlight-color: #b3b3b3;
-  --muted-color: #d3d3d3;
-  --planes-background-color: #e5e5d8; /* Added background color for planes */
-  --gradient-background: linear-gradient(135deg, #676e67, #666a70, #595664); /* Updated gradient background */
+  /* Colores principales */
+  --primary-color: #ffffff; /* Blanco puro - Texto destacado o elementos importantes sobre fondos oscuros */
+  --secondary-color: #c0c0c0; /* Gris claro metálico - Fondos secundarios, tarjetas o contenedores neutrales */
+  --tertiary-color: #404d49; /* Verde grisáceo oscuro - Botones principales, encabezados destacados o íconos activos */
+
+  /* Colores de acento */
+  --accent-color: #485877; /* Azul grisáceo oscuro - Enlaces activos, bordes decorativos o botones secundarios */
+  --secondary-accent-color: #a3a3a3; /* Gris neutro claro - Iconos, bordes o detalles decorativos sutiles */
+
+  /* Fondo y sombras */
+  --background-color: #2e3a52; /* Azul oscuro profundo - Fondo principal de la página o secciones clave */
+  --highlight-color: #b3b3b3; /* Gris medio claro - Resaltados suaves en textos, íconos menores o contornos */
+  --muted-color: #d3d3d3; /* Gris apagado claro - Texto secundario, etiquetas o elementos deshabilitados */
+  --planes-background-color: #e5e5d8; /* Beige claro cálido - Fondos de secciones promocionales o elementos destacados */
+
+  /* Texto */
+  --dark-text-color: #333333; /* Gris muy oscuro - Texto principal o de alta jerarquía sobre fondos claros */
+  --light-text-color: #f5f5f5; /* Blanco humo - Texto sobre fondos oscuros o en banners destacados */
+
+  /* Gradiente */
+  --gradient-background: linear-gradient(
+    135deg,
+    #485877,
+    #404d49,
+    #333333
+  ); /* Fondo de cabecera, banners promocionales o separadores de sección */
+
+  /* Colores adicionales */
+  --neutral-color: #e0e0e0; /* Gris claro neutro - Fondos de tarjetas, divisores o elementos con diseño minimalista */
+  --soft-highlight: #f2f2f2; /* Gris blanco suave - Fondos alternativos o áreas con poca relevancia visual */
 }
 
 /* Globales */
@@ -29,7 +49,7 @@ body {
   font-family: "Roboto", sans-serif;
   background: var(--background-color); /* Fondo sólido */
   width: 100%;
-  color: var(--highlight-color); /* Color del texto */
+  color: var(--dark-text-color); /* Updated color */
   line-height: 1.6;
   -webkit-font-smoothing: antialiased; /* Improve text rendering */
   -moz-osx-font-smoothing: grayscale;
@@ -42,14 +62,14 @@ a {
 }
 
 a:hover {
-  color: var(--complementary-color);
+  color: var(--dark-text-color); /* Updated color */
   text-decoration: underline;
 }
 
 /* Botones */
 button {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: var(--dark-text-color); /* Updated color */
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 5px;
@@ -113,12 +133,12 @@ button:focus {
 }
 
 .chatbot-section .chatbot-info {
-  color: var(--secondary-color);
+  color: var(--dark-text-color); /* Updated color */
   text-align: left;
 }
 
-.chatbot-section .chatbot-info h3 {
-  color: var(--secondary-color);
+chatbot-section .chatbot-info h3 {
+  color: var(--dark-text-color); /* Updated color */
 }
 
 .chatbot-section .chatbot-info p {

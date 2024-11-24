@@ -95,7 +95,7 @@
 
 .planes-description {
   font-size: 1.25rem;
-  color: var(--primary-color); /* Changed to primary color for better contrast */
+  color: var(--light-text-color); /* Changed to light text color for better contrast */
   margin-top: 10px;
 }
 

@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  color: var(--dark-text-color); /* Updated color */
+  color: var(--light-text-color); /* Updated color */
   line-height: 1.6;
 }
 
@@ -30,7 +30,7 @@ body {
 .blog-title {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: var(--primary-color); /* Updated color */
+  color: var(--dark-text-color); /* Updated color */
 }
 
 .bold-text {
@@ -47,7 +47,7 @@ body {
 
 .blog-author {
   font-weight: bold;
-  color: var(--primary-color); /* Updated color */
+  color: var(--dark-text-color); /* Updated color */
 }
 
 .blog-date,
@@ -88,7 +88,7 @@ body {
   display: flex;
   align-items: center;
   font-size: 1.2rem;
-  color: var(--accent-color); /* Updated color */
+  color: var(--dark-text-color); /* Updated color */
 }
 
 .sidebar {
@@ -138,19 +138,19 @@ body {
 
 .sidebar-blog-card p {
   font-size: 0.9rem;
-  color: var(--dark-text-color); /* Updated color */
+  color: var(--light-text-color); /* Updated color */
   margin-bottom: 0.5rem;
 }
 
 .read-more {
-  color: var(--accent-color); /* Updated color */
+  color: var(--cta-color); /* Updated color */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
 
 .read-more:hover {
-  color: var(--primary-color); /* Updated color */
+  color: var(--tertiary-color); /* Updated color */
 }
 
 .related-blog-etiquetas {

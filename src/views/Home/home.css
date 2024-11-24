@@ -7,6 +7,8 @@
   --secondary-accent-color: #A3A3A3;
   --highlight-color: #B3B3B3;
   --muted-color: #D3D3D3;
+  --dark-text-color: #333333; /* Added dark text color */
+  --light-text-color: #f5f5f5; /* Added light text color */
 }
 
 body {
@@ -24,7 +26,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--primary-color); /* Color primario */
+  color: var(--light-text-color); /* Updated color */
   margin-bottom: 1rem;
 }
 
@@ -38,7 +40,7 @@ h6 {
 }
 
 .navbar a {
-  color: white;
+  color: var(--light-text-color); /* Updated color */
   margin-right: 1rem;
 }
 
@@ -64,13 +66,13 @@ h6 {
 }
 
 .feature h3 {
-  color: var(--primary-color); /* Color primario */
+  color: var(--dark-text-color); /* Updated color */
   margin-bottom: 0.5rem;
 }
 
 .footer {
   background-color: var(--accent-color); /* Color primario */
-  color: white;
+  color: var(--light-text-color); /* Updated color */
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
@@ -86,13 +88,13 @@ h6 {
 
 .search-bar .form-control {
   border-radius: 8px;
-  color: #1a1a1a; /* Darker color */
+  color: var(--dark-text-color); /* Darker color */
 }
 
 .search-bar .btn {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  color: #1a1a1a; /* Darker color */
+  color: var(--dark-text-color); /* Darker color */
 }
 
 /* Sección de filtros */
@@ -103,18 +105,25 @@ h6 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin-bottom: 1rem;
-  color: #1a1a1a; /* Darker color */
+  color: var(--dark-text-color); /* Updated color */
+  font-weight: bold; /* Make text bold */
+}
+
+.filter-section h5 {
+  color: var(--dark-text-color); /* Updated color */
+  font-weight: bold; /* Make text bold */
 }
 
 .filter-label {
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
-  color: #1a1a1a; /* Darker color */
+  color: var(--dark-text-color); /* Updated color */
+  font-weight: bold; /* Make text bold */
 }
 
 .filter-label .form-check-input {
-  border-color: #1a1a1a; /* Darker border color */
+  border-color: var(--dark-text-color); /* Darker border color */
 }
 
 /* Sección de carrusel */

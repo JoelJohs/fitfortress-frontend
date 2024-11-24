@@ -16,7 +16,7 @@ const SideBlogs = ({ randomBlogs }) => {
                 __html: randomBlog.contenido.substring(0, 50) + "...",
               }}
             ></p>
-            <Link to={`/blog/${randomBlog._id}`} className="btn btn-primary">
+            <Link to={`/blog/${randomBlog._id}`} className="read-more">
               Leer más
             </Link>
             <div className="related-blog-etiquetas">

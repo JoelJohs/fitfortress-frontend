@@ -9,6 +9,7 @@
 .sidebar h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: var(--dark-text-color); /* Updated color */
 }
 
 .sidebar-blogs {
@@ -41,16 +42,17 @@
 .sidebar-blog-card h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  color: var(--dark-text-color); /* Updated color */
 }
 
 .sidebar-blog-card p {
   font-size: 0.9rem;
-  color: #1a1a1a; /* Darker color */
+  color: var(--dark-text-color); /* Updated color */
   margin-bottom: 0.5rem;
 }
 
 .read-more {
-  color: var(--accent-color);
+  color: var(--dark-text-color); /* Updated color */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease-in-out;
