@@ -1,14 +1,14 @@
 :root {
-  --primary-color: #2d4729;
+  --primary-color: #ffffff;
   --secondary-color: #c0c0c0;
-  --tertiary-color: #e5e5d8;
-  --accent-color: #4d2600;
+  --tertiary-color: #404d49;
+  --accent-color: #485877;
   --background-color: #2e3a52;
   --secondary-accent-color: #a3a3a3;
   --highlight-color: #b3b3b3;
   --muted-color: #d3d3d3;
   --planes-background-color: #e5e5d8; /* Added background color for planes */
-  --gradient-background: linear-gradient(135deg, #e5e5d8, #c0c0c0, #a3a3a3); /* Updated gradient background */
+  --gradient-background: linear-gradient(135deg, #676e67, #666a70, #595664); /* Updated gradient background */
 }
 
 /* Globales */

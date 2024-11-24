@@ -1,5 +1,5 @@
 .footer-container {
-  background-color: #4d2600;
+  background-color: #2E3A52;
   color: #e5e5d8;
   padding: 2rem 0; /* Reduced padding */
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
@@ -95,7 +95,7 @@
 .footer-bottom {
   text-align: center;
   padding: 1rem 0; /* Reduced padding */
-  background-color: #3b2317;
+  background-color: #3d4b66;
   color: #e5e5d8;
   width: 100%; /* Ensure full width */
 }
