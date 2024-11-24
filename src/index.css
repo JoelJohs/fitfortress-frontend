@@ -1,29 +1,14 @@
 :root {
-  /* Colores principales */
-  --primary-color: #1b2d1e; /* Verde Oscuro Profundo - Navbar, encabezados importantes, fondo de secciones clave */
-  --secondary-color: #e5e5d8; /* Beige Claro - Fondo de contenido, tarjetas, formulario */
-  --tertiary-color: #ffcc00; /* Amarillo Complementario - Botones principales, enlaces activos o CTA */
-
-  /* Colores de acento */
-  --accent-color: #4d2600; /* Marrón Oscuro - Usar en botones secundarios, bordes o iconos */
-  --secondary-accent-color: #c0c0c0; /* Plateado - Detalles decorativos, iconos, o bordes de secciones */
-
-  /* Fondo y sombras */
-  --background-color: #2e3a52; /* Azul Oscuro - Fondo de la página */
-  --highlight-color: #b3b3b3; /* Gris Claro - Textos destacados, íconos menores */
-  --muted-color: #d3d3d3; /* Gris Apagado - Texto secundario, detalles de baja importancia */
-  --planes-background-color: #e5e5d8; /* Beige Claro - Fondo de la sección de planes o promociones */
-  --dark-text-color: #333333; /* Nuevo color para texto oscuro */
-
-  /* Gradiente */
-  --gradient-background: linear-gradient(
-    135deg,
-    #2e3a52,
-    /* Azul Oscuro */ #1b2d1e /* Verde Oscuro Profundo */
-  ); /* Fondo de secciones principales, cabecera o banners */
-
-  /* Complementario */
-  --complementary-color: #ff6600; /* Naranja Complementario - Alertas, mensajes importantes, o iconos de advertencia */
+  --primary-color: #ffffff;
+  --secondary-color: #c0c0c0;
+  --tertiary-color: #404d49;
+  --accent-color: #485877;
+  --background-color: #2e3a52;
+  --secondary-accent-color: #a3a3a3;
+  --highlight-color: #b3b3b3;
+  --muted-color: #d3d3d3;
+  --planes-background-color: #e5e5d8; /* Added background color for planes */
+  --gradient-background: linear-gradient(135deg, #676e67, #666a70, #595664); /* Updated gradient background */
 }
 
 /* Globales */

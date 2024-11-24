@@ -18,7 +18,35 @@
 }
 
 .navbar-nav .nav-link:hover {
-  color: var(--accent-color) !important;
+  color: #c0c0c0 !important;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Agrega sombra al texto */
+}
+
+body {
+  padding-top: 100px; /* Añade un padding */
+}
+
+.navbar {
+  background-color: #2E3A52 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para separar la navbar */
+  z-index: 1000; /* Asegura que la navbar esté por encima de otros elementos */
+}
+
+.navbar-brand .logo {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+
+.navbar-nav .nav-link {
+  color: #e5e5d8 !important;
+  font-weight: bold;
+  font-size: 1.2rem; /* Increase font size */
+  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #c0c0c0 !important;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Agrega sombra al texto */
 }
 

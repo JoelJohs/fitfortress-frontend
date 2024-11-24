@@ -93,7 +93,7 @@ const LoginRegisterTabs = () => {
 const LoginForm = ({ handleLogin }) => (
   <form className="text-center" onSubmit={handleLogin}>
     <div className="logo-container mb-4">
-      <img src="/logo.png" alt="Logo" className="logo rounded-circle" />
+      <img src="/logon.png" alt="Logo" className="logo rounded-circle" />
     </div>
     <div className="mb-3">
       <label htmlFor="usuario" className="form-label">
