@@ -15,6 +15,7 @@ const PlanCard = ({ plan }) => {
           ))}
         </ul>
         <h3 className="plan-precio">{plan.precio} MXN</h3>
+        <button className="btn btn-primary mt-3">Comprar Plan</button>
       </div>
     </div>
   );

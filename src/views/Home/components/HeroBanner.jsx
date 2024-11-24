@@ -10,20 +10,26 @@ const HeroBanner = ({ onScrollToBlogs }) => {
         src="Gimnasio-aparatos.png"
         alt="Gimnasio Aparatos"
         className="w-100 h-100 position-absolute top-0 start-0"
-        style={{ objectFit: "cover", filter: "brightness(0.7)" }}
+        style={{ objectFit: "cover", filter: "brightness(0.8)" }}
       />
       <div className="hero-content position-absolute text-center">
-        <h1 className="display-1 mb-3 text-shadow">Bienvenido a FitFortress</h1>{" "}
-        {/* Add text-shadow class */}
-        <p className="fs-3 mb-4 text-shadow">
-          Transforma tu vida con nuestras rutinas y planes personalizados.
-        </p>
-        <button
-          onClick={onScrollToBlogs}
-          className="btn btn-primary btn-lg animate-btn"
-        >
-          Ver Blogs
-        </button>
+        <div className="text-background"> {/* Add text-background class */}
+          <h1 className="display-1 mb-3 text-shadow">Bienvenido a FitFortress</h1>{" "}
+          {/* Add text-shadow class */}
+          <p className="fs-3 mb-4 text-shadow">
+            Transforma tu vida con nuestras rutinas y planes personalizados.
+          </p>
+          <button
+            onClick={onScrollToBlogs}
+            className="btn btn-primary btn-lg animate-btn"
+            style={{
+              backgroundColor: "var(--primary-color)",
+              color: "var(--secondary-color)",
+            }}
+          >
+            Ver Blogs
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -11,8 +11,12 @@ const SideBlogs = ({ randomBlogs }) => {
           <div key={randomBlog.id} className="sidebar-blog-card">
             <img src={randomBlog.imagen} alt={randomBlog.titulo} />
             <h3>{randomBlog.titulo}</h3>
-            <p>{randomBlog.contenido.substring(0, 50)}...</p>
-            <Link to={`/blog/${randomBlog.id}`} className="btn btn-primary">
+            <p
+              dangerouslySetInnerHTML={{
+                __html: randomBlog.contenido.substring(0, 50) + "...",
+              }}
+            ></p>
+            <Link to={`/blog/${randomBlog._id}`} className="btn btn-primary">
               Leer más
             </Link>
             <div className="related-blog-etiquetas">
@@ -34,7 +38,7 @@ export default SideBlogs;
 SideBlogs.propTypes = {
   randomBlogs: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
       imagen: PropTypes.string.isRequired,
       titulo: PropTypes.string.isRequired,
       contenido: PropTypes.string.isRequired,

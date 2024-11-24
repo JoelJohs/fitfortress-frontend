@@ -23,7 +23,7 @@
 
 .card-text {
   font-size: 0.95rem;
-  color: #1a1a1a; /* Darker color */
+  color: var(--dark-text-color); /* Updated color */
 }
 
 .article-likes {
@@ -32,15 +32,16 @@
   justify-content: center;
   gap: 5px;
   font-size: 1em;
-  color: #555;
+  color: var(--dark-text-color); /* Updated color */
   margin-bottom: 10px;
 }
 
 .article-likes svg {
   width: 1.2em;
   height: 1.2em;
-  fill: #d94e67;
+  fill: var(--accent-color); /* Updated color */
 }
+
 /* blog.css */
 
 .article-image img {
@@ -54,50 +55,20 @@
   justify-content: center;
   gap: 5px;
   font-size: 1em;
-  color: #555;
+  color: var(--dark-text-color); /* Updated color */
 }
 
 .article-likes svg {
   width: 1.2em;
   height: 1.2em;
-  fill: #d94e67;
+  fill: var(--accent-color); /* Updated color */
 }
 
 .card-title {
-  /* blog.css */
-
-  .article-image img {
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-
-  .article-likes {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    font-size: 1em;
-    color: #555;
-  }
-
-  .article-likes svg {
-    width: 1.2em;
-    height: 1.2em;
-    fill: #d94e67;
-  }
-
-  .card-title {
-    font-size: 1.25rem;
-  }
-
-  .card-text {
-    font-size: 0.95rem;
-  }
-
   font-size: 1.25rem;
 }
 
 .card-text {
   font-size: 0.95rem;
-  color: #1a1a1a; /* Darker color */
+  color: var(--dark-text-color); /* Updated color */
 }

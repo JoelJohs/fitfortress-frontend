@@ -10,7 +10,7 @@
 }
 
 body {
-  background: var(--gradient-background); /* Use gradient background */
+  background: linear-gradient(135deg, #2e3a52, #1b2d1e); /* Gradient background */
   background-attachment: fixed; /* Fix the background */
   background-size: cover; /* Cover the entire screen */
 }

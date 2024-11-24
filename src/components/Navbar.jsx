@@ -1,13 +1,26 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
 import "../styles/navbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
   };
 
   return (
@@ -42,7 +55,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/asistente">
+              <Link className="nav-link" to="/chatbot">
                 Asistente virtual
               </Link>
             </li>
@@ -56,11 +69,58 @@ const Navbar = () => {
                 Nosotros
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Conectarse
-              </Link>
-            </li>
+            {user ? (
+              <li className="nav-item">
+                <span
+                  className="nav-link"
+                  onMouseEnter={toggleDropdown}
+                  onMouseLeave={toggleDropdown}
+                  style={{ position: "relative" }}
+                >
+                  {user.username}
+                  {dropdownOpen && (
+                    <div
+                      className="dropdown-menu show"
+                      style={{
+                        display: "block",
+                        position: "absolute",
+                        top: "100%",
+                        left: "0",
+                        backgroundColor: "#343a40",
+                        color: "#fff",
+                        borderRadius: "0.25rem",
+                        boxShadow: "0 0.5rem 1rem rgba(0, 0, 0, 0.15)",
+                      }}
+                    >
+                      <Link
+                        className="dropdown-item"
+                        to={`/perfil/${user.username}`}
+                        style={{ color: "#fff" }}
+                      >
+                        Ir a mi perfil
+                      </Link>
+                      <hr
+                        className="dropdown-divider"
+                        style={{ borderColor: "#6c757d" }}
+                      />
+                      <button
+                        className="dropdown-item"
+                        onClick={handleLogout}
+                        style={{ color: "#fff" }}
+                      >
+                        Cerrar sesión
+                      </button>
+                    </div>
+                  )}
+                </span>
+              </li>
+            ) : (
+              <li className="nav-item">
+                <Link className="nav-link" to="/login">
+                  Conectarse
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>

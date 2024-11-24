@@ -4,7 +4,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+  background: var(--gradient-background);
+  opacity: 0.6; /* Add opacity */
   z-index: 1;
 }
 
@@ -14,6 +15,13 @@
 
 .text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.text-background {
+  background-color: rgba(0, 0, 0, 0.5); /* Add semi-transparent background */
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
 }
 
 .animate-btn {

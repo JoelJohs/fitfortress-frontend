@@ -11,11 +11,16 @@ const Blogs = ({ blog }) => {
       </div>
       <div className="card-body text-center">
         <h5 className="card-title">{blog.titulo}</h5>
-        <p className="card-text">{blog.contenido.substring(0, 100)}...</p>
+        <div
+          className="card-text"
+          dangerouslySetInnerHTML={{
+            __html: blog.contenido.substring(0, 100) + "...",
+          }}
+        ></div>
         <p className="article-likes mb-2">
           <LikeIcon /> {blog.likes}
         </p>
-        <Link to={`/blog/${blog.id}`} className="btn btn-primary">
+        <Link to={`/blog/${blog._id}`} className="btn btn-primary">
           Leer más
         </Link>
       </div>
@@ -28,7 +33,7 @@ Blogs.propTypes = {
     imagen: PropTypes.string.isRequired,
     titulo: PropTypes.string.isRequired,
     contenido: PropTypes.string.isRequired,
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    _id: PropTypes.string.isRequired,
     likes: PropTypes.number.isRequired,
   }).isRequired,
 };

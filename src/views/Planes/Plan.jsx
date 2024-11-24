@@ -54,8 +54,8 @@ const Routines = () => {
     <div className="planes-landing-container">
       <header className="planes-header">
         <div className="header-container">
-          <h1 className="planes-title">Planes</h1>
-          <p className="planes-description">
+          <h1 className="planes-title" style={{ color: "var(--tertiary-color)" }}>Planes</h1> {/* Improved contrast */}
+          <p className="planes-description" style={{ color: "var(--tertiary-color)" }}>
             Descubre nuestros planes diseñados para mejorar tu salud y bienestar. Elige el que mejor se adapte a tus objetivos y comienza tu transformación hoy mismo.
           </p>
         </div>

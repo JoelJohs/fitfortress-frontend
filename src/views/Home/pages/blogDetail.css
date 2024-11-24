@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  color: var(--secondary-color);
+  color: var(--dark-text-color); /* Updated color */
   line-height: 1.6;
 }
 
@@ -20,7 +20,7 @@ body {
 
 .blog-detail-container {
   flex: 3;
-  background-color: var(--tertiary-color);
+  background-color: var(--secondary-color); /* Updated color */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 2rem;
@@ -30,7 +30,7 @@ body {
 .blog-title {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: var(--primary-color);
+  color: var(--primary-color); /* Updated color */
 }
 
 .bold-text {
@@ -41,18 +41,18 @@ body {
   display: flex;
   gap: 1rem;
   font-size: 1rem;
-  color: var(--secondary-color);
+  color: var(--dark-text-color); /* Updated color */
   margin-bottom: 1rem;
 }
 
 .blog-author {
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--primary-color); /* Updated color */
 }
 
 .blog-date,
 .blog-category {
-  color: var(--secondary-color);
+  color: var(--dark-text-color); /* Updated color */
 }
 
 .blog-etiquetas { 
@@ -63,7 +63,7 @@ body {
 }
 
 .blog-etiqueta {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color); /* Updated color */
   color: #fff;
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
@@ -81,19 +81,19 @@ body {
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1rem;
-  color: #1a1a1a; /* Darker color */
+  color: var(--dark-text-color); /* Updated color */
 }
 
 .blog-likes {
   display: flex;
   align-items: center;
   font-size: 1.2rem;
-  color: var(--accent-color);
+  color: var(--accent-color); /* Updated color */
 }
 
 .sidebar {
   flex: 1;
-  background-color: var(--tertiary-color);
+  background-color: var(--secondary-color); /* Updated color */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 2rem;
@@ -138,19 +138,19 @@ body {
 
 .sidebar-blog-card p {
   font-size: 0.9rem;
-  color: #1a1a1a; /* Darker color */
+  color: var(--dark-text-color); /* Updated color */
   margin-bottom: 0.5rem;
 }
 
 .read-more {
-  color: var(--accent-color);
+  color: var(--accent-color); /* Updated color */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
 
 .read-more:hover {
-  color: var(--primary-color);
+  color: var(--primary-color); /* Updated color */
 }
 
 .related-blog-etiquetas {
@@ -161,7 +161,7 @@ body {
 }
 
 .related-blog-etiqueta {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color); /* Updated color */
   color: #fff;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;

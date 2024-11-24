@@ -1,14 +1,29 @@
 :root {
-  --primary-color: #2d4729;
-  --secondary-color: #c0c0c0;
-  --tertiary-color: #e5e5d8;
-  --accent-color: #4d2600;
-  --background-color: #2e3a52;
-  --secondary-accent-color: #a3a3a3;
-  --highlight-color: #b3b3b3;
-  --muted-color: #d3d3d3;
-  --planes-background-color: #e5e5d8; /* Added background color for planes */
-  --gradient-background: linear-gradient(135deg, #e5e5d8, #c0c0c0, #a3a3a3); /* Updated gradient background */
+  /* Colores principales */
+  --primary-color: #1b2d1e; /* Verde Oscuro Profundo - Navbar, encabezados importantes, fondo de secciones clave */
+  --secondary-color: #e5e5d8; /* Beige Claro - Fondo de contenido, tarjetas, formulario */
+  --tertiary-color: #ffcc00; /* Amarillo Complementario - Botones principales, enlaces activos o CTA */
+
+  /* Colores de acento */
+  --accent-color: #4d2600; /* Marrón Oscuro - Usar en botones secundarios, bordes o iconos */
+  --secondary-accent-color: #c0c0c0; /* Plateado - Detalles decorativos, iconos, o bordes de secciones */
+
+  /* Fondo y sombras */
+  --background-color: #2e3a52; /* Azul Oscuro - Fondo de la página */
+  --highlight-color: #b3b3b3; /* Gris Claro - Textos destacados, íconos menores */
+  --muted-color: #d3d3d3; /* Gris Apagado - Texto secundario, detalles de baja importancia */
+  --planes-background-color: #e5e5d8; /* Beige Claro - Fondo de la sección de planes o promociones */
+  --dark-text-color: #333333; /* Nuevo color para texto oscuro */
+
+  /* Gradiente */
+  --gradient-background: linear-gradient(
+    135deg,
+    #2e3a52,
+    /* Azul Oscuro */ #1b2d1e /* Verde Oscuro Profundo */
+  ); /* Fondo de secciones principales, cabecera o banners */
+
+  /* Complementario */
+  --complementary-color: #ff6600; /* Naranja Complementario - Alertas, mensajes importantes, o iconos de advertencia */
 }
 
 /* Globales */
@@ -27,40 +42,29 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  background: none; /* Remove background from body */
+  background: var(--background-color); /* Fondo sólido */
   width: 100%;
-  color: var(--secondary-color); /* Color de texto global */
+  color: var(--highlight-color); /* Color del texto */
   line-height: 1.6;
   -webkit-font-smoothing: antialiased; /* Improve text rendering */
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Fixed background element */
-.fixed-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--gradient-background);
-  z-index: -1; /* Ensure it stays behind all content */
-}
-
 /* Enlaces */
 a {
-  color: var(--primary-color); /* Color primario */
+  color: var(--accent-color);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--accent-color); /* Color secundario */
+  color: var(--complementary-color);
   text-decoration: underline;
 }
 
 /* Botones */
 button {
-  background-color: var(--primary-color); /* Color primario */
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 5px;
@@ -69,12 +73,12 @@ button {
 }
 
 button:hover {
-  background-color: var(--accent-color); /* Color secundario */
-  transform: scale(1.05); /* Slightly enlarge button on hover */
+  background-color: var(--secondary-accent-color);
+  transform: scale(1.05);
 }
 
 button:focus {
-  outline: 2px solid #2ecc71; /* Accessibility improvement */
+  outline: 2px solid var(--accent-color);
   outline-offset: 2px;
 }
 
@@ -105,4 +109,38 @@ button:focus {
   button {
     padding: 0.4rem 0.8rem;
   }
+}
+
+/* Chatbot Section */
+.chatbot-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.chatbot-section img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.chatbot-section .chatbot-info {
+  color: var(--secondary-color);
+  text-align: left;
+}
+
+.chatbot-section .chatbot-info h3 {
+  color: var(--secondary-color);
+}
+
+.chatbot-section .chatbot-info p {
+  margin-bottom: 20px;
+}
+
+.chatbot-section .chatbot-info button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./us.css";
+
 const Us = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -39,10 +40,12 @@ const Us = () => {
           alt="Nuestro equipo"
         />
         <div className="hero-content position-absolute top-50 start-50 translate-middle">
-          <h1 className="display-4 text-white-bold">Sobre Nosotros</h1>
-          <p className="lead">
-            Conoce más sobre nuestro equipo y nuestra misión.
-          </p>
+          <div className="blackbox p-3">
+            <h1 className="display-4 text-white-bold">Sobre Nosotros</h1>
+            <p className="lead">
+              Conoce más sobre nuestro equipo y nuestra misión.
+            </p>
+          </div>
         </div>
       </div>
       <div className="content my-5 p-4 bg-light rounded shadow">
@@ -68,8 +71,8 @@ const Us = () => {
                   width="150"
                   height="150"
                 />
-                <h3>{member.nombre}</h3>
-                <p className="text-muted">{member.rol}</p>
+                <h3 className="text-bold">{member.nombre}</h3>
+                <p className="text-complementary">{member.rol}</p>
                 <p>{member.descripcion}</p>
               </div>
             ))}

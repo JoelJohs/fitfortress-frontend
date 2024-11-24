@@ -1,14 +1,33 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./home.css";
-import tempDb from "../../utils/tempDb";
+import { getBlogs } from "../../utils/dbConnection";
 import HeroBanner from "./components/HeroBanner";
 import Blogs from "./components/Blogs";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [search, setSearch] = useState("");
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [blogs, setBlogs] = useState([]);
   const blogsRef = useRef(null);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const data = await getBlogs();
+        if (Array.isArray(data)) {
+          setBlogs(data); // Asegúrate de que data es un array
+        } else {
+          console.error("Unexpected data format:", data);
+        }
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
 
   const handleSearch = (event) => {
     setSearch(event.target.value);
@@ -27,17 +46,21 @@ const Home = () => {
     );
   };
 
-  const filteredBlogs = tempDb.filter((blog) => {
-    const matchesSearch = blog.titulo
-      .toLowerCase()
-      .includes(search.toLowerCase());
-    const matchesCategory =
-      selectedCategories.length === 0 ||
-      selectedCategories.includes(blog.categoria);
-    return matchesSearch && matchesCategory;
-  });
+  const filteredBlogs = Array.isArray(blogs)
+    ? blogs.filter((blog) => {
+        const matchesSearch = blog.titulo
+          .toLowerCase()
+          .includes(search.toLowerCase());
+        const matchesCategory =
+          selectedCategories.length === 0 ||
+          selectedCategories.includes(blog.categoria);
+        return matchesSearch && matchesCategory;
+      })
+    : [];
 
-  const categories = [...new Set(tempDb.map((blog) => blog.categoria))];
+  const categories = Array.isArray(blogs)
+    ? [...new Set(blogs.map((blog) => blog.categoria))]
+    : [];
 
   const groupedBlogs = [];
   for (let i = 0; i < filteredBlogs.length; i += 3) {
@@ -107,6 +130,15 @@ const Home = () => {
             ))}
           </div>
         </div>
+      </div>
+      <div className="container text-center mt-4">
+        <Link
+          to="/blogs"
+          className="btn btn-primary btn-lg"
+          style={{ fontSize: "1.5rem", padding: "1rem 2rem" }}
+        >
+          Ver todos los blogs
+        </Link>
       </div>
     </div>
   );
