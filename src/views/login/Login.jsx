@@ -3,6 +3,8 @@ import { useAuth } from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { registerUser, getUserByUsername } from "../../utils/dbConnection"; // Import registerUser and getUserByUsername
 import advicesArray from "../../utils/advicesArray"; // Import advicesArray
+import { toast, ToastContainer } from "react-toastify"; // Import ToastContainer
+import "react-toastify/dist/ReactToastify.css"; // Import react-toastify CSS
 import "./login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -38,9 +40,11 @@ const LoginRegisterTabs = () => {
         tipoCuenta: user.tipoCuenta,
       }); // Pass user details to login
       console.log("Logged in:", credentials.username, credentials.password);
+      toast.success(`Login Exitoso ${credentials.username}`); // Show success toast
       navigate("/"); // Redirect to home page
     } catch (error) {
       console.error("Error during login:", error);
+      toast.error("Error durante el login"); // Show error toast
     }
   };
 
@@ -58,14 +62,17 @@ const LoginRegisterTabs = () => {
     try {
       await registerUser(newUser);
       console.log("User registered:", newUser);
+      toast.success(`Registro Exitoso ${newUser.username}`); // Show success toast
       navigate("/"); // Redirect to home page
     } catch (error) {
       console.error("Error during registration:", error);
+      toast.error("Error durante el registro"); // Show error toast
     }
   };
 
   return (
     <div className="container-fluid principal d-flex align-items-center justify-content-center">
+      <ToastContainer /> {/* Add ToastContainer */}
       <div className="row bg-overlay w-100 justify-content-center">
         <div className="col-md-6 d-none d-md-flex decoracion align-items-center justify-content-center">
           <div className="text-center text-white">

@@ -32,7 +32,7 @@ const Us = () => {
   ];
 
   return (
-    <div className="container">
+    <div className="us-container">
       <div className="hero-banner position-relative text-center text-white">
         <img
           className="w-100 h-100 object-fit-cover"
@@ -57,6 +57,16 @@ const Us = () => {
             nutrición para transformar vidas, y estamos comprometidos a
             proporcionarte las herramientas y el apoyo que necesitas para tener
             éxito.
+          </p>
+        </section>
+        <section className="mb-5">
+          <h2 className="text-accent">Nuestra Visión</h2>
+          <p>
+            Nuestra visión es ser líderes en el ámbito del fitness y el bienestar,
+            inspirando a personas de todas las edades y niveles de habilidad a
+            vivir una vida más saludable y activa. Nos esforzamos por crear una
+            comunidad inclusiva y solidaria donde todos puedan alcanzar sus
+            objetivos personales.
           </p>
         </section>
         <section>

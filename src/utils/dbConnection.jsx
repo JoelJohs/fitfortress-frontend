@@ -62,3 +62,40 @@ export const getUserByUsername = async (username) => {
     throw error;
   }
 };
+
+//** Blogs **/
+// Crear Blog
+export const createBlog = async (blogData) => {
+  try {
+    const formData = new FormData();
+
+    // Agregamos cada campo al FormData
+    formData.append("titulo", blogData.titulo);
+    formData.append("contenido", blogData.contenido);
+    formData.append("categoria", blogData.categoria);
+    formData.append("etiquetas", blogData.etiquetas.join(",")); // Etiquetas separadas por comas
+    formData.append("imagen", blogData.imagen); // Archivo de imagen
+
+    const response = await api.post(`${API_URL}/blogs`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data", // Especificamos que es un form-data
+      },
+      withCredentials: true, // Para enviar cookies si usas autenticación
+    });
+
+    return response.data; // Devuelve la respuesta del servidor
+  } catch (error) {
+    console.error("Error al crear el blog:", error);
+    throw error.response?.data?.mensaje || error.message;
+  }
+};
+
+// Eliminar Blog
+export const deleteBlog = async (id) => {
+  try {
+    await api.delete(`${API_URL}/blogs/${id}`);
+  } catch (error) {
+    console.error("Error deleting blog:", error);
+    throw error;
+  }
+};

@@ -4,15 +4,18 @@ import "../../index.css";
 const Rutinas = () => {
   return (
     <div>
-      <section className="container my-5">
+      <div className="my-5">
         <h1
           className="text-center fw-bold"
-          style={{ color: "var(--light-text-color)" }} /* Improved contrast */
+          style={{
+            color: "var(--light-text-color)" /* Updated to dark text color */,
+            textShadow:
+              "2px 2px 4px rgba(0, 0, 0, 0.5)" /* Added text shadow */,
+          }}
         >
           ¿Qué tipo de rutina buscas?
         </h1>
-
-        <div className="row my-4">
+        <div className="d-flex justify-content-around my-4">
           <div className="col-md-4">
             <div className="card-container">
               <img
@@ -64,7 +67,7 @@ const Rutinas = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <div className="py-2" style={{ backgroundColor: "var(--primary-color)" }}>
         <section className="container my-5">

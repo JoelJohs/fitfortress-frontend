@@ -3,6 +3,15 @@
   padding: 20px 0;
 }
 
+/* Contenedor personalizado */
+.custom-container {
+  background-color: #f8f9fa; /* Light grey background */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  color: var(--dark-text-color); /* Dark text color */
+}
+
 /* Botón principal destacado */
 .btn-primary {
   background-color: #007bff;

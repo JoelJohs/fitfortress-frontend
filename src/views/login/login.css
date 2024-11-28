@@ -83,3 +83,7 @@ body {
   color: #a0a0a0;
   opacity: 1; /* Override default opacity */
 }
+
+.form-label {
+  color: #000; /* Set label color to dark */
+}

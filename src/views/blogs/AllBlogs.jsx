@@ -3,7 +3,7 @@ import { getBlogs } from "../../utils/dbConnection";
 import Blogs from "../Home/components/Blogs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { AuthContext } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./AllBlogs.css";
 
 const AllBlogs = () => {
@@ -11,7 +11,6 @@ const AllBlogs = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -40,6 +39,14 @@ const AllBlogs = () => {
     );
   };
 
+  const handleDelete = (id) => {
+    setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog._id !== id));
+  };
+
+  const handleUpdate = () => {
+    // Logic to update the blogs list
+  };
+
   const filteredBlogs = blogs.filter((blog) => {
     const matchesSearch = blog.titulo
       .toLowerCase()
@@ -54,21 +61,20 @@ const AllBlogs = () => {
 
   return (
     <div className="all-blogs-container">
-      {/* Botón destacado para crear blog */}
-      {user && (user.role === "personal" || user.role === "admin") && (
-        <div className="container-fluid bg-light py-5 text-center mb-4 shadow-sm">
-          <h2 className="mb-3">Administra tus Blogs</h2>
-          <button
-            className="btn btn-lg btn-primary px-5 py-3"
-            onClick={() => navigate("/create-blog")}
-          >
-            + Crear Nuevo Blog
-          </button>
-        </div>
-      )}
-
-      {/* Barra de búsqueda */}
-      <div className="container my-4">
+      <div className="container my-4 custom-container">
+        {/* Botón destacado para crear blog */}
+        {user && (user.role === "personal" || user.role === "admin") && (
+          <div className="text-center mb-4">
+            <h2 className="mb-3">Administra tus Blogs</h2>
+            <Link
+              className="btn btn-lg btn-primary px-5 py-3"
+              to="/escribir-blog"
+            >
+              + Crear Nuevo Blog
+            </Link>
+          </div>
+        )}
+        {/* Barra de búsqueda */}
         <div className="row justify-content-center">
           <div className="col-md-8">
             <input
@@ -80,11 +86,12 @@ const AllBlogs = () => {
             />
           </div>
         </div>
-      </div>
-
-      {/* Filtros interactivos */}
-      <div className="container mb-4">
-        <h5 className="text-center mb-3">Filtrar por Categorías:</h5>
+        <h5
+          style={{ color: "var(--dark-text-color)" }}
+          className="text-center mt-5 mb-3"
+        >
+          Filtrar por Categorías:
+        </h5>
         <div className="d-flex flex-wrap justify-content-center gap-2">
           {categories.map((category) => (
             <span
@@ -106,14 +113,17 @@ const AllBlogs = () => {
           ))}
         </div>
       </div>
-
       {/* Lista de blogs */}
-      <div className="container">
+      <div className="container custom-container">
         <div className="row row-cols-1 row-cols-md-3 g-4">
           {filteredBlogs.map((blog, idx) => (
             <div key={idx} className="col">
               <div className="card h-100 shadow-sm border-0">
-                <Blogs blog={blog} />
+                <Blogs
+                  blog={blog}
+                  onDelete={handleDelete}
+                  onUpdate={handleUpdate}
+                />
               </div>
             </div>
           ))}

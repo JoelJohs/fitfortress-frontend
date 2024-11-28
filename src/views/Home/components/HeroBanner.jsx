@@ -1,34 +1,34 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "./HeroBanner.css"; // Import the CSS file for additional styles
 
-const HeroBanner = ({ onScrollToBlogs }) => {
+const HeroBanner = () => {
   return (
-    <div className="hero-banner position-relative d-flex align-items-center justify-content-center text-white vh-100">
+    <div className="hero-banner">
       <div className="overlay"></div> {/* Add a gradient overlay */}
       <img
         src="Gimnasio-aparatos.png"
         alt="Gimnasio Aparatos"
-        className="w-100 h-100 position-absolute top-0 start-0"
-        style={{ objectFit: "cover", filter: "brightness(0.8)" }}
+        className="w-100 h-100"
       />
-      <div className="hero-content position-absolute text-center">
-        <div className="text-background"> {/* Add text-background class */}
-          <h1 className="display-1 mb-3 text-shadow">Bienvenido a FitFortress</h1>{" "}
+      <div className="hero-content">
+        <div className="text-background">
+          {" "}
+          {/* Add text-background class */}
+          <h1 className="display-1 mb-3 text-shadow">
+            Bienvenido a FitFortress
+          </h1>{" "}
           {/* Add text-shadow class */}
           <p className="fs-3 mb-4 text-shadow">
             Transforma tu vida con nuestras rutinas y planes personalizados.
           </p>
-          <button
-            onClick={onScrollToBlogs}
+          <Link
+            to="/blogs" // Use Link to navigate to /blogs
             className="btn btn-primary btn-lg animate-btn"
-            style={{
-              backgroundColor: "var(--primary-color)",
-              color: "var(--secondary-color)",
-            }}
           >
             Ver Blogs
-          </button>
+          </Link>
         </div>
       </div>
     </div>

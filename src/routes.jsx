@@ -10,6 +10,7 @@ import ChatBot from "./views/chatbot/ChatBot";
 import AllBlogs from "./views/blogs/AllBlogs";
 import NotFound from "./404";
 import UserProfile from "./views/user/UserProfile";
+import WriteBlog from "./views/blogs/views/WriteBlog";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "blogs",
         element: <AllBlogs />,
+      },
+      {
+        path: "escribir-blog",
+        element: <WriteBlog />,
       },
       {
         path: "perfil/:username",

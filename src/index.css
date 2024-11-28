@@ -20,11 +20,12 @@
 
   /* Gradiente */
   --gradient-background: linear-gradient(
-    135deg,
+    150deg,
+    #2e3a52,
     #485877,
     #404d49,
-    #333333
-  ); /* Fondo de cabecera, banners promocionales o separadores de sección */
+    /* Darker color */ #a3a3a3 /* Slightly darker color */
+  ); /* Updated gradient background with less light colors */
 
   /* Colores adicionales */
   --neutral-color: #e0e0e0; /* Gris claro neutro - Fondos de tarjetas, divisores o elementos con diseño minimalista */
@@ -148,4 +149,83 @@ chatbot-section .chatbot-info h3 {
 .chatbot-section .chatbot-info button {
   background-color: var(--secondary-color);
   color: var(--primary-color);
+}
+
+/* Estilos para la página de escribir blogs */
+.container {
+  background-color: #f8f9fa; /* Updated to match AllBlogs container color */
+  color: var(--dark-text-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-container {
+  background-color: var(--primary-color);
+  color: var(--dark-text-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: var(--accent-color);
+}
+
+form {
+  margin-top: 20px;
+}
+
+form .form-group {
+  margin-bottom: 15px;
+}
+
+form .form-label {
+  font-weight: bold;
+}
+
+form .form-control,
+form .form-select {
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+}
+
+form .form-control:focus,
+form .form-select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px rgba(72, 88, 119, 0.5);
+}
+
+button[type="submit"] {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--secondary-accent-color);
+  transform: scale(1.05);
+}
+
+.react-select-container {
+  font-size: 1rem;
+}
+
+.quill-editor {
+  min-height: 250px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.custom-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

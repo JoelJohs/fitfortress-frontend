@@ -27,7 +27,7 @@
 .footer-description {
   margin-top: 0.5rem; /* Reduced margin */
   font-size: 0.9rem; /* Reduced font size */
-  color: var(--highlight-color); /* Updated color */
+  color: var(--light-text-color); /* Updated color */
 }
 
 .footer-newsletter {
@@ -43,7 +43,7 @@
 
 .footer-newsletter p {
   font-size: 0.9rem; /* Reduced font size */
-  color: var(--highlight-color); /* Updated color */
+  color: var(--light-text-color); /* Updated color */
   margin-bottom: 0.5rem; /* Reduced margin */
 }
 

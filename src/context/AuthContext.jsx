@@ -1,5 +1,9 @@
 import { createContext, useState, useEffect } from "react";
-import { loginUser, logoutUser, getUserByUsername } from "../utils/dbConnection";
+import {
+  loginUser,
+  logoutUser,
+  getUserByUsername,
+} from "../utils/dbConnection";
 import Cookies from "js-cookie";
 
 export const AuthContext = createContext();

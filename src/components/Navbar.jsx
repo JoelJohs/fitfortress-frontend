@@ -54,11 +54,11 @@ const Navbar = () => {
                 Rutinas
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link" to="/chatbot">
                 Asistente virtual
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link className="nav-link" to="/plan">
                 Planes
@@ -85,7 +85,8 @@ const Navbar = () => {
                         display: "block",
                         position: "absolute",
                         top: "100%",
-                        left: "0",
+                        left: "50%",
+                        transform: "translateX(-50%)",
                         backgroundColor: "#343a40",
                         color: "#fff",
                         borderRadius: "0.25rem",
