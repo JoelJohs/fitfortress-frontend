@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #f0f2f5;
 }
 
@@ -12,7 +12,7 @@ body {
   align-items: center;
   overflow: hidden;
   position: relative;
-  background-image: url("Gimnasio-aparatos.png");
+  background-image: url("/Gimnasio-aparatos.png");
   background-size: cover;
   background-position: center;
 }
